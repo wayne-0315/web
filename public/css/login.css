@@ -1,0 +1,119 @@
+/* login分頁 */
+
+*{box-sizing: border-box;}
+
+.margin {
+    margin:50px;
+    border: 0;
+    padding: 0;
+}
+
+.marginv2 {
+    margin:10px;
+    border: 0;
+    padding: 0;
+}
+
+.login {
+    margin: 0px auto;
+    width: 500px;
+    height: 100%;
+    line-height: 50px;
+    padding: 10px;
+    background-color: #a8b5a1;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.login > h3{
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 600;
+    margin:0 0 6px;
+}
+
+.login > b{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.login-id{
+    width: 100%;
+    margin: 0;
+    display: grid;
+    gap:16px;
+    
+}
+
+.control{
+    border: 0;
+    border-radius: 8px;
+    outline: none;
+    width: 100%;
+    height: 56px;
+    padding: 0 16px;
+    background:#edeaf7;
+    color:#5a4f79;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    transition: 0.4s;
+}
+
+
+.login-id input.control::placeholder{
+    color: #aaa7bc;
+}
+
+.login-id > button.control{
+    cursor: pointer;
+    width:100%;
+    height: 56px;
+    padding: 0 16px;
+    background:#617B3F;
+    color: #f9f9f9;
+    border: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:lrem;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 2px;
+    transform: all 0.375s;
+}
+
+.password{
+    position: relative;
+}
+
+/*
+.toggle{
+    position: absolute;
+    top:50%;
+    right: 16px;
+    translate:0 -50%;
+    width: 30px;
+    height: 30px;
+    background-image: url("image/view.png");
+    background-size: 85%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.toggle.showing {
+    background-image: url("image/hide.svg");
+}
+*/
+.button{
+    background:transparent;
+    cursor :pointer;
+    border: 0;
+}
+
+#login:hover{
+    background-color:#aeb6ab;
+    color:black;
+}

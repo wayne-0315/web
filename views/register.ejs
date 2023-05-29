@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="css/top.css">
+    <title>STUDY ROOM</title>
+</head>
+
+<body>
+<!-- 上方藍色專欄 !-->
+    <div class="navbar">
+        <div class="left center" style="justify-content:left">
+            <h1 id="title">STUDY ROOM RESERVATION</h1>
+        </div>
+        <div class="right center" style="justify-content:right">
+            <ul>
+                <li><a href="members">會員專區</a></li>
+                <li><a href="lostupdate">上傳遺失物</a></li>
+                <li><a href="lost">遺失物專區</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 間隔登入區塊跟專欄的地方 !-->
+
+    <div class="margin"></div>
+    
+    <!-- 登入區塊 !-->
+
+    <div class="login"> 
+        <b>登入</b>
+        <h3>Enter your student ID and Password</h3>
+        <form class="login-id" action="/register" method="post">
+            <input 
+                class="control" 
+                id="id"
+                name="id"
+                type="text" 
+                placeholder="ID" 
+            />
+            <div class="password">
+                <input 
+                    class="control" 
+                    id="password" 
+                    name="pw"
+                    type="password" 
+                    placeholder="Password" 
+                />
+            </div>
+            <input 
+                class="control" 
+                id="email" 
+                name="email"
+                type="email" 
+                placeholder="Email" 
+            />
+            <button class="control" type="submit" id="login">SUBMIT</button>
+        </form>
+    </div>
+
+</body>
+
+</html>

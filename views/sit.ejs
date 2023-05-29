@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="css/time.css">
+    <link rel="stylesheet" type="text/css" href="css/sit.css">
+    <link rel="stylesheet" type="text/css" href="css/top.css">
+    <title>選擇座位</title>
+</head>
+
+<body>
+    <!-- 上方專欄 !-->
+    <div class="navbar">
+        <div class="left center" style="justify-content:left">
+            <h1 id="title">STUDY ROOM RESERVATION</h1>
+        </div>
+        <div class="right center" style="justify-content:right">
+            <ul>
+                <li><a href="members">會員專區</a></li>
+                <li><a href="lostupdate">上傳遺失物</a></li>
+                <li><a href="lost">遺失物專區</a></li>
+            </ul>
+            <form action="/logout" method="get">
+                <button class="control" type="submit" id="logout">登出</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 間隔 !-->
+
+    <div class="margin"></div>
+
+    <!-- 時間專區 !-->
+    <form action="/sit" method="post">
+        <div class="time">
+            <b style="color: white;">所選日期與區域</b>
+            <div class="controlv2" id="sit_date" name="sit_date" readonly="readonly" type="text"><%= sit_date.date %>
+            </div>
+            <div class="marginv2"></div>
+            <div class="controlv2" id="sit_region" name="sit_region" readonly="readonly" type="text">
+                <%= sit_region.region %></div>
+            <div class="marginv2"></div>
+            <button class="control" id="login" type="submit"><a href="time">返回</a></button>
+        </div>
+        <div class="margin"></div>
+        <% for (let i = 1; i <= 20; i++) { %>
+        <button type="submit" class="button" name="sitId" value="<%= i %>"><%= i %></button>
+        <% } %>
+    </form>
+
+</body>
+
+</html>

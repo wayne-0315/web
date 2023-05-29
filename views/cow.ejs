@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/navfot.css">
+    <link rel="stylesheet" href="css/card.css">
+    <link rel="stylesheet" href="css/paragraph.css">
+    <style>
+        /* 上標題加上連結的設定 */
+
+        body {
+            margin: 0;
+        }
+
+        .navbar {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            background-color: #ffffff;
+        }
+
+
+
+        .center {
+            display: flex;
+            align-items: center;
+        }
+
+        #title {
+            font-size: 40px;
+            padding-left: 20px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: white;
+        }
+
+        ul {
+            display: flex;
+            list-style-type: none;
+            justify-content: end;
+            gap: 15px;
+            padding-right: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: azure;
+            font-size: 30px;
+        }
+
+        a:hover {
+            color: black;
+        }
+
+        .control {
+            border: 0;
+            border-radius: 8px;
+            outline: none;
+            width: 30%;
+            height: 56px;
+            padding: 0 16px;
+            background: #617B3F;
+            color: #5a4f79;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 30px;
+            transition: 0.4s;
+        }
+
+        .controlv2 {
+            border: 0;
+            border-radius: 8px;
+            outline: none;
+            width: 100%;
+            height: 56px;
+            padding: 0 16px;
+            background: white;
+            color: #5a4f79;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 30px;
+            transition: 0.4s;
+        }
+
+        .button {
+            background: transparent;
+            cursor: pointer;
+            border: 0;
+        }
+
+        /* 下拉按钮样式 */
+        .dropbtn {
+            background-color: #ffffff;
+            color: #5C5F62;
+            padding: 33px;
+            font-size: 30px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* 容器 <div> - 需要定位下拉内容 */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            z-index: 2;
+        }
+
+        /* 下拉内容 (默认隐藏) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 下拉菜单的链接 */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* 鼠标移上去后修改下拉菜单链接颜色 */
+        .dropdown-content a:hover {
+            background-color: #f1f1f1
+        }
+
+        /* 在鼠标移上去后显示下拉菜单 */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* 当下拉内容显示后修改下拉按钮的背景颜色 */
+        .dropdown:hover .dropbtn {
+            background-color: #617B3F;
+            color: #ffffff;
+        }
+
+        .btn {
+            border: 3px #617B3F solid;
+            background-color: #617B3F;
+            color: #fff;
+            border-radius: 6px;
+            cursor: pointer;
+            padding: 10px;
+            font-size: 20px;
+            margin-right: 60px;
+        }
+
+        .btn:hover {
+            color: #5C5F62;
+            background-color: #fff;
+            border: 3px #5C5F62 solid;
+        }
+
+        .vid {
+            width: 100%;
+        }
+
+        .fot {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .lg {
+            margin-left: 60px;
+        }
+
+        .oot1 {
+            margin-left: 60px;
+        }
+
+        .oot2 {
+            margin-left: 35px;
+        }
+
+        .oot3 {
+            margin-left: 35px;
+        }
+
+        .v-line1 {
+            border-left: 1px solid #000;
+            height: 75px;
+            left: 55.5%;
+            position: absolute;
+            margin-top: 40px;
+            margin-bottom: 50px;
+        }
+
+        .v-line2 {
+            border-left: 1px solid #000;
+            height: 75px;
+            left: 75.5%;
+            position: absolute;
+            margin-top: 40px;
+            margin-bottom: 50px;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap-reverse;
+            margin-left: 100px;
+            margin-right: 100px;
+            margin-bottom: 70px;
+            justify-content: space-between;
+            border-radius: 10px;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        .flex-direction {
+            flex-direction: row;
+            width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 0px;
+        }
+
+        .in:hover .contentin {
+            display: block;
+        }
+
+        .in {
+            display: inline;
+        }
+
+        .contentin {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            background-color: #f9f9f9;
+            min-width: 200px;
+        }
+
+        /* 以上是共用區域 */
+    </style>
+</head>
+
+<body>
+    <!-- 上方專欄 !-->
+    <nav>
+        <ul>
+            <a href="index"><img src="img/LOGO.jpg" class="logo_top"></a>
+            <li class="dropdown">
+                <a href="#" class="green-pad">報</a>
+                <ul class="dropdown-menu">
+                    <li><a href="news" class="green_1">即時新聞</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="yw-pad">饞</a>
+                <ul class="dropdown-menu">
+                    <li><a href="cloud" class="yw_1">雲南</a></li>
+                    <li><a href="village" class="yw_2">眷村</a></li>
+                    <li><a href="newpeople" class="yw_3">新住民</a></li>
+                    <li><a href="muslin" class="yw_4">穆斯林</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="oy-pad">夢</a>
+                <ul class="dropdown-menu">
+                    <li><a href="child" class="oy_1">手碟</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="lighto-pad">地</a>
+                <ul class="dropdown-menu">
+                    <li><a href="market" class="lighto_1">忠貞市場</a></li>
+                    <li><a href="chin" class="lighto_2">清真寺</a></li>
+                    <li><a href="park" class="lighto_3">雲南公園</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="pink-pad">購</a>
+                <ul class="dropdown-menu">
+                    <li><a href="buy" class="pink_1">美食代購</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dimand-pad">創</a>
+                <ul class="dropdown-menu">
+                    <li><a href="create" class="dimand_1">忠貞創生</a></li>
+                </ul>
+            </li>
+        
+            <button class="conbtn">
+                <a href="connection" class="btna">找我</a>
+            </button>
+        </ul>
+    </nav>
+    <div class="title">
+        <h1>雲南牛肝巴</h1>
+    </div>
+    <div class="why">
+        <div class="image-container">
+        <div class="image-wrapper">            
+            <p class="image-caption">大块牛後腿腌制作，以自家口味加花椒、辣椒粉、五香粉等香料，揉搓拍打至入味，放置在阴凉处风干，可以油炸、油淋或爆炒，也可以煮湯或撒在湯麵上，口味鮮甜，是穆斯林日常喜愛的食品。</p>
+            <img class="threetwo"src="img32/cloud/cow.png">
+        </div>           
+        </div>        
+    </div>
+  
+    <footer>
+        <img src="img/LOGO.jpg" class="logo_foot">
+        <div class="oot1">
+            <h3>忠貞社區地方協會</h3>
+            <p>營業時間<br>星期一至星期五 8am~10pm</p>
+        </div>
+
+        <div class="oot2">
+            <p>工作據點<br>桃園市平鎮區貿五路36號</p>
+            <p>電子信箱<br>zcda10901@gmail.com</p>
+        </div>
+        <div class="oot2">
+            <p>聯絡電話<br>(03)4658200</p>
+        </div>
+
+    </footer>
+</body>
+
+</html>

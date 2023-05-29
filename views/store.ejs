@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>忠貞首頁</title>
+    <style>
+        /* 上標題加上連結的設定 */
+
+        body {
+            margin: 0;
+        }
+
+        .navbar {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            background-color: #ffffff;
+        }
+
+
+
+        .center {
+            display: flex;
+            align-items: center;
+        }
+
+        #title {
+            font-size: 40px;
+            padding-left: 20px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: white;
+        }
+
+        ul {
+            display: flex;
+            list-style-type: none;
+            justify-content: end;
+            gap: 15px;
+            padding-right: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: azure;
+            font-size: 30px;
+        }
+
+        a:hover {
+            color: black;
+        }
+
+        .control {
+            border: 0;
+            border-radius: 8px;
+            outline: none;
+            width: 30%;
+            height: 56px;
+            padding: 0 16px;
+            background: #617B3F;
+            color: #5a4f79;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 30px;
+            transition: 0.4s;
+        }
+
+        .controlv2 {
+            border: 0;
+            border-radius: 8px;
+            outline: none;
+            width: 100%;
+            height: 56px;
+            padding: 0 16px;
+            background: white;
+            color: #5a4f79;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 30px;
+            transition: 0.4s;
+        }
+
+        .button {
+            background: transparent;
+            cursor: pointer;
+            border: 0;
+        }
+
+        /* 下拉按钮样式 */
+        .dropbtn {
+            background-color: #ffffff;
+            color: #5C5F62;
+            padding: 33px;
+            font-size: 30px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* 容器 <div> - 需要定位下拉内容 */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            z-index: 2;
+        }
+
+        /* 下拉内容 (默认隐藏) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 下拉菜单的链接 */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* 鼠标移上去后修改下拉菜单链接颜色 */
+        .dropdown-content a:hover {
+            background-color: #617B3F;
+            color: #ffffff;
+        }
+
+        /* 在鼠标移上去后显示下拉菜单 */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* 当下拉内容显示后修改下拉按钮的背景颜色 */
+        .dropdown:hover .dropbtn {
+            background-color: #617B3F;
+            color: #ffffff;
+        }
+
+        .btn {
+            border: 3px #617B3F solid;
+            background-color: #617B3F;
+            color: #fff;
+            border-radius: 6px;
+            cursor: pointer;
+            padding: 10px;
+            font-size: 20px;
+            margin-right: 60px;
+        }
+
+        .btn:hover {
+            color: #5C5F62;
+            background-color: #fff;
+            border: 3px #5C5F62 solid;
+        }
+
+        .vid {
+            width: 100%;
+        }
+
+        .fot {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .lg {
+            margin-left: 60px;
+        }
+
+        .oot1 {
+            margin-left: 60px;
+        }
+
+        .oot2 {
+            margin-left: 35px;
+        }
+
+        .oot3 {
+            margin-left: 35px;
+        }
+
+        .v-line1 {
+            border-left: 1px solid #000;
+            height: 75px;
+            left: 55.5%;
+            position: absolute;
+            margin-top: 40px;
+            margin-bottom: 50px;
+        }
+
+        .v-line2 {
+            border-left: 1px solid #000;
+            height: 75px;
+            left: 75.5%;
+            position: absolute;
+            margin-top: 40px;
+            margin-bottom: 50px;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap-reverse;
+            margin-left: 100px;
+            margin-right: 100px;
+            margin-bottom: 70px;
+            justify-content: space-between;
+            border-radius: 10px;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        .flex-direction {
+            flex-direction: row;
+            width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 0px;
+        }
+
+        .in:hover .contentin {
+            display: block;
+        }
+
+        .in {
+            display: inline;
+        }
+
+        .contentin {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            background-color: #f9f9f9;
+            min-width: 250px;
+        }
+
+        /* 以上是共用區域 */
+    </style>
+</head>
+
+<body>
+    <!-- 上方專欄 !-->
+    <div class="navbar" style="justify-content: space-between;">
+        <div class="left center">
+            <a href="index"><img src="img/111.png" alt="" width="100" height="100" class="lg"></a>
+        </div>
+
+        <div class="mid center">
+            <div class="dropdown">
+                <button class="dropbtn">新</button>
+                <div class="dropdown-content">
+                    <a href="news">即時新聞</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">饞</button>
+                <div class="dropdown-content">
+                    <a href="cloud">雲南</a>
+                    <a href="village">眷村</a>
+                    <a href="newpeople">新住民</a>
+                    <a href="muslin">穆斯林</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">夢</button>
+                <div class="dropdown-content">
+                    <div class="in"><a href="#">手碟</a>
+                        <div class="contentin">
+                            <a href="child">築夢者</a>
+                            <a href="intro">手碟介紹</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">地</button>
+                <div class="dropdown-content">
+                    <div class="in"><a href="#">景點</a>
+                        <div class="contentin">
+                            <a href="market">忠貞市場</a>
+                            <a href="chin">清真寺</a>
+                            <a href="park">雲南公園</a>
+                            <a href="store">東南亞雜貨店</a>
+                        </div>
+                    </div>
+                    <a href="create">忠貞創生</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">購</button>
+                <div class="dropdown-content">
+                    <a href="buy">美食代購</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="right center">
+            <a href="connection">
+                <button class="btn">
+                    聯絡我們
+                </button>
+            </a>
+        </div>
+
+    </div>
+    <div style="text-align:center;margin-bottom: 50px;">
+        <h1>東南亞雜貨店</h1>
+    </div>
+    <div class="flex-direction">
+        <p>
+            忠貞市場周邊有許多東南亞各國人口遷入，因此有多家販售他們日常生活與習慣的食材，有乾料/生鮮材料和東南亞品牌產品琳瑯滿目。
+        </p>
+        <img src="img32/view/store.jpg" style="display:block; margin:auto;width:800px;" alt="">
+
+    </div>
+
+
+    <footer class="fot" style="display: flex; justify-content: center;">
+        <div>
+            <img src="../img/111.png" alt="" width="150" height="150" class="foot">
+        </div>
+        <div class="oot1">
+            <h1>忠貞社區地方協會</h1>
+            <h3>營業時間<br>星期一至星期五 8am~10pm</h3>
+        </div>
+
+        <div class="oot2">
+            <h3>地址<br>桃園市平鎮區中山路63號</h3>
+
+            <h3>電子信箱<br>zcda10901@gmail.com</h3>
+        </div>
+
+        <div class="oot3">
+            <h3>聯絡電話<br>(03)4658200</h3>
+        </div>
+
+    </footer>
+
+
+
+</body>
+
+</html>

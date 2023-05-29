@@ -1,0 +1,20 @@
+.button{
+    border:0;
+    background-color: lightsteelblue;
+    color:#fff;
+    border-radius:10px;
+    cursor:pointer;
+    width:150px;
+    height:150px;
+    font-size:50px;
+    margin-left: 200px;
+    margin-bottom: 100px;
+    align-items: center;
+    
+}
+  
+.button:hover{
+    color:black;
+    background-color:rgb(120, 164, 221);
+    
+}

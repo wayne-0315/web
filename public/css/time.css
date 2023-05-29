@@ -1,0 +1,83 @@
+.margin {
+    margin:70px;
+    border: 0;
+    padding: 0;
+}
+
+.time {
+    display: grid;
+    margin: 0px auto;
+    width: 500px;
+    height: 100%;
+    line-height: 50px;
+    padding: 10px;
+    background-color: lightsteelblue;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.time > b{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.control{
+    border: 0;
+    border-radius: 8px;
+    outline: none;
+    width: 100%;
+    height: 56px;
+    padding: 0 16px;
+    background:rgb(120, 164, 221);
+    color:white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    transition: 0.4s;
+}
+
+#date{
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 600;
+    margin:10px 0 10px;
+}
+
+#region{
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 600;
+    margin:10px 0 10px;
+}
+
+button{
+    background:transparent;
+    cursor :pointer;
+    border: 0;
+}
+
+#clear{
+    margin:5px;
+}
+
+#clear:hover{
+    background-color:rgb(91, 142, 209);
+    color:black;
+}
+
+#check:hover{
+    background-color:rgb(91, 142, 209);
+    color:black;
+}
+
+
+#check{
+    margin:5px;
+}
+
+.btn{
+    display: flex;
+}

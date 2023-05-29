@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/time.css">
+    <link rel="stylesheet" type="text/css" href="css/lost.css">
+    <link rel="stylesheet" type="text/css" href="css/top.css">
+    <title>選擇日期與區域</title>
+</head>
+
+<body>
+    <!-- 上方藍色專欄 !-->
+    <div class="navbar">
+        <div class="left center" style="justify-content:left">
+            <h1 id="title">STUDY ROOM RESERVATION</h1>
+        </div>
+        <div class="right center" style="justify-content:right">
+            <ul>
+                <li><a href="members">會員專區</a></li>
+                <li><a href="lostupdate">上傳遺失物</a></li>
+                <li><a href="lost">遺失物專區</a></li>
+            </ul>
+            <form action="/logout" method="get">
+                <button class="control" type="submit" id="logout">登出</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 間隔登入區塊跟專欄的地方 !-->
+
+    <% if(time==1) { %>
+        <script>
+            alert("已經有人定位");
+        </script>
+        <% } %>
+        <% if(time==2) { %>
+            <script>
+                alert("不能在同一天訂位兩次");
+            </script>
+            <% } %>
+
+
+    <div class="margin"></div>
+
+    <form action="/time" method="post">
+        
+        <div class="time">
+            <b style="color: white;">選擇日期</b>
+
+            <input type="date" name="get_date" id="date" placeholder="選擇日期" />
+            <b style="color: white;">選擇區域</b>
+            <select id="region" name="get_region">
+                <option value="">請選擇區域</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="E">E</option>
+                <option value="F">F</option>
+            </select>
+        <div class="btn">
+            <input class="control" id="clear" type="reset" value="清除資料">
+            <input class="control" id="check" type="submit" value="確定">
+        </div>
+        </div>    
+        
+    </form>
+</body>
+
+
+</html>
