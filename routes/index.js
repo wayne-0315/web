@@ -9,7 +9,7 @@ const LinkModel = require("../model/link");
 const mongoose = require('mongoose');
 const path = require('path');
 const fs = require('fs');
-const bcrypt = require("bcrypt");
+//const bcrypt = require("bcrypt");
 
 const articleModel = require('../model/article');
 const newsModel = require('../model/news');
@@ -1660,103 +1660,103 @@ router.get('/createupdate', isAuth, (req, res) => {
 });
 
 
-router.post("/login", async (req, res) => {
-	const {
-		id,
-		pw
-	} = req.body;
-	const member = await memberModel.findOne({
-		id
-	});
-	if (!member) {
-		console.log("Member not found!!!");
-		return res.render("login");
-	}
+// router.post("/login", async (req, res) => {
+// 	const {
+// 		id,
+// 		pw
+// 	} = req.body;
+// 	const member = await memberModel.findOne({
+// 		id
+// 	});
+// 	if (!member) {
+// 		console.log("Member not found!!!");
+// 		return res.render("login");
+// 	}
 
-	const verifyPW = await bcrypt.compare(pw, member.pw);
-	if (!verifyPW) {
-		console.log("PW is incorrect!!!");
-		return res.render("login");
-	}
+// 	const verifyPW = await bcrypt.compare(pw, member.pw);
+// 	if (!verifyPW) {
+// 		console.log("PW is incorrect!!!");
+// 		return res.render("login");
+// 	}
 
-	req.session.isAuth = true;
-	req.session.name = member.id;
-	const id2 = req.session.name;
-	const todayStr = new Date().toISOString().slice(0, 10);
+// 	req.session.isAuth = true;
+// 	req.session.name = member.id;
+// 	const id2 = req.session.name;
+// 	const todayStr = new Date().toISOString().slice(0, 10);
 
 
-	// 找尋符合條件的所有sit資料
-	const sits = await sitModel.find({
-		id: id2
-	});
-	// 找尋符合條件的所有point資料
-	const points = await pointModel.find({
-		id: id2
-	});
+// 	// 找尋符合條件的所有sit資料
+// 	const sits = await sitModel.find({
+// 		id: id2
+// 	});
+// 	// 找尋符合條件的所有point資料
+// 	const points = await pointModel.find({
+// 		id: id2
+// 	});
 
-	// 檢查今天是否有sit資料
-	let todaySits = sits.filter(sit => sit.date === todayStr);
-	if (sits.length === 0) {
-		console.log('沒有找到sit資料');
-		return res.render('members', {
-			sitSchema: {},
-			pointSchema: points,
-			myname: req.session.name,
-			num: points.length,
-			docs: 0
-		});
-	} else if (todaySits.length === 0) {
-		console.log(`今天沒有sit資料`);
-		return res.render('members', {
-			sitSchema: sits,
-			pointSchema: points,
-			myname: req.session.name,
-			num: points.length,
-			docs: 0
-		});
-	}
+// 	// 檢查今天是否有sit資料
+// 	let todaySits = sits.filter(sit => sit.date === todayStr);
+// 	if (sits.length === 0) {
+// 		console.log('沒有找到sit資料');
+// 		return res.render('members', {
+// 			sitSchema: {},
+// 			pointSchema: points,
+// 			myname: req.session.name,
+// 			num: points.length,
+// 			docs: 0
+// 		});
+// 	} else if (todaySits.length === 0) {
+// 		console.log(`今天沒有sit資料`);
+// 		return res.render('members', {
+// 			sitSchema: sits,
+// 			pointSchema: points,
+// 			myname: req.session.name,
+// 			num: points.length,
+// 			docs: 0
+// 		});
+// 	}
 
-	// 有今天的sit資料, 顯示members頁面
-	console.log(`找到 ${todaySits.length} 筆今天的sit資料`);
-	res.render('members', {
-		sitSchema: todaySits,
-		pointSchema: points,
-		myname: req.session.name,
-		num: points.length,
-		docs: todaySits.length
-	});
-});
+// 	// 有今天的sit資料, 顯示members頁面
+// 	console.log(`找到 ${todaySits.length} 筆今天的sit資料`);
+// 	res.render('members', {
+// 		sitSchema: todaySits,
+// 		pointSchema: points,
+// 		myname: req.session.name,
+// 		num: points.length,
+// 		docs: todaySits.length
+// 	});
+// });
 router.get('/register', function (req, res) {
 	res.render('register');
 	console.log("register成功");
 });
 
-router.post("/register", async (req, res) => {
-	const {
-		id,
-		pw,
-		email
-	} = req.body;
-	if (!id || !pw || !email) {
-		return res.redirect("register");
-	}
-	let member = await memberModel.findOne({
-		id
-	});
-	if (member) {
-		return res.redirect("/register");
-	}
-	const hashPW = await bcrypt.hash(pw, 10);
-	member = new memberModel({
-		id,
-		pw: hashPW,
-		email
-	});
-	const result = await member.save();
-	res.render("login");
+// router.post("/register", async (req, res) => {
+// 	const {
+// 		id,
+// 		pw,
+// 		email
+// 	} = req.body;
+// 	if (!id || !pw || !email) {
+// 		return res.redirect("register");
+// 	}
+// 	let member = await memberModel.findOne({
+// 		id
+// 	});
+// 	if (member) {
+// 		return res.redirect("/register");
+// 	}
+// 	const hashPW = await bcrypt.hash(pw, 10);
+// 	member = new memberModel({
+// 		id,
+// 		pw: hashPW,
+// 		email
+// 	});
+// 	const result = await member.save();
+// 	res.render("login");
 
-	console.log(id, email, pw);
-});
+// 	console.log(id, email, pw);
+// });
 
 router.get("/logout", (req, res) => {
 	if (req.session) {
