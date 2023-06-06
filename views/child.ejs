@@ -81,7 +81,8 @@
         </div>           
         </div>        
     </div>
-    <div class="all">
+    <div id="child" class="all"></div>
+    <!-- <div class="all">
         <div class="card">
             <div class="card-body">
                 <a href="">
@@ -178,7 +179,7 @@
                 <h5 class="card-title center">王蕾(Abby)</h5>
             </div>
         </div>
-    </div>
+    </div> -->
     <footer>
         <img src="img/ci.png" class="logo_foot">
         <div class="oot1">
@@ -200,6 +201,29 @@
         </div>
 
     </footer>
+
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+        <script src="vendor/bootstrap/js/popper.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script src="vendor/select2/select2.min.js"></script>
+        <script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+        <script src="js/main.js"></script>
+        <script type="text/javascript" src="./javascripts/header.js"></script>
+        <script type="text/javascript" src="./javascripts/child.js"></script>
+        <script type="text/javascript" src="./javascripts/child-in.js"></script>
+        <script>
+            function initArticle(data) {
+        var content = `
+        
+        <p>${data.content}</p>`;
+        $('#a_child').append(content);
+    }
+    initArticle(res.data);
+    getArticleById();
+        
+    
+        </script>
 </body>
 
 </html>

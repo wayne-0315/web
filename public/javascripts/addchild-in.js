@@ -1,10 +1,14 @@
-function addnewpeople() {
+function addchild() {
     if ($('#title').val() == '' || $('#title').val() == null){
-        alert('請輸入標題');
+        alert('請輸入姓名');
         return;
     }
     if ($('#content').val() == '' || $('#content').val() == null){
-        alert('請輸入內文');
+        alert('請輸入介紹');
+        return;
+    }
+    if (!/.(gif|jpg|jpeg|png|GIF|JPG|PNG|JPEG)$/.test(img.value)) {
+        alert("圖片類型不正確");
         return;
     }
 
@@ -13,14 +17,11 @@ function addnewpeople() {
         content: $('#content').val().replace(/ /g, '&nbsp;').replace(/\n/g, "<br />"),
         ipth: $('#ipth').val(),
         aaa: $('#aaa').val(),
-        title1: $('#title1').val(),
+        
     }
 
     var img = document.getElementById('u_img_file');
-    if (!/.(gif|jpg|jpeg|png|GIF|JPG|PNG|JPEG)$/.test(img.value)) {
-        alert("圖片類型不正確");
-        return;
-    }
+    
     var fromData = new FormData();
     fromData.append('file', img.files[0]);
     var url = "/upload1?id=" + $.cookie('userID');
@@ -41,10 +42,10 @@ function addnewpeople() {
         }
     });
 
-    $.post("/newpeopleupdate", postdata, function (res) {
+    $.post("/childupdate", postdata, function (res) {
         if (res.status == 0) {
             alert('發文成功');
-            location.href = '/newpeople';
+            location.href = '/child';
         }
     });
 }

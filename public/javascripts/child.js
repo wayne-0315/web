@@ -1,4 +1,4 @@
-function newnewpeople (data) {
+function newchild (data) {
     var content = document. createElement ('div');
     content.className = "card";
     var dat = new Date (data. postdate);
@@ -8,17 +8,17 @@ function newnewpeople (data) {
     
             
                 <div class="card-body">
-                    <a href="/newpeople-in?_id=${data._id}">
+                    <a href="/child-in?_id=${data._id}">
                     <img class="" src="../photos/${data.ipth}">
                     </a>
                     <h5 class="card-title">${data.title}</h5>
-                    <a href="/newpeople-in?_id=${data._id}" class="ywbtn btn btn-bottom-right">了解更多</a>
+                    
                 </div>
             
     
     `;
     content.insertAdjacentHTML('beforeend', addHtml);
-    $('#newpeople').append(content);
+    $('#child').append(content);
     }
     
     function getUrlVal(val) {
@@ -33,7 +33,7 @@ function newnewpeople (data) {
         return (false);
     }
     
-    function getnewpeople() {
+    function getchild() {
         var search = '';
     // if (getUrlVal ("type")) {
     // search += "type=" + getUrlVal ("type") + '&';
@@ -44,13 +44,12 @@ function newnewpeople (data) {
     if (getUrlVal ("title")) {
     search += "title=" + getUrlVal ("title") + '&';
     }
-    $.get("/getnewpeople?" + search, function (res, status) {
+    $.get("/getchild?" + search, function (res, status) {
     $('#type').val(res.type) ;
     for (var i = 0; i < res.data.length; i++) {
-    newnewpeople(res.data[i]);
+    newchild(res.data[i]);
     }
     });
     }
     
-    getnewpeople();
-
+    getchild();

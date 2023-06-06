@@ -64,18 +64,7 @@
             </a>
         </ul>
     </nav>
-    <div class="title">
-        <h1>雲南公園</h1>
-    </div>
-
-   <div class="why">
-        <div class="image-container">
-        <div class="image-wrapper">            
-            <p class="image-caption">2013年啓用，占地0.2公頃，設有藏族轉經輪、景頗族目瑙縱歌祈福柱等，富含雲南文化特色的設施，為「雲南文化｣為主題的特色公園。</p>
-            <img class="threetwo"src="img32/view/park.jpg">
-        </div>           
-        </div>        
-    </div>
+    <div id="park" class="all"></div>
     <footer>
         <img src="img/ci.png" class="logo_foot">
         <div class="oot1">
@@ -97,6 +86,29 @@
         </div>
 
     </footer>
+
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+        <script src="vendor/bootstrap/js/popper.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script src="vendor/select2/select2.min.js"></script>
+        <script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+        <script src="js/main.js"></script>
+        <script type="text/javascript" src="./javascripts/header.js"></script>
+        <script type="text/javascript" src="./javascripts/park.js"></script>
+        <script type="text/javascript" src="./javascripts/park-in.js"></script>
+        <script>
+            function initArticle(data) {
+        var content = `
+        
+        <p>${data.content}</p>`;
+        $('#a_park').append(content);
+    }
+    initArticle(res.data);
+    getArticleById();
+        
+    
+        </script>
 </body>
 
 </html>

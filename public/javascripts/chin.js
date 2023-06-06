@@ -1,24 +1,26 @@
-function newnewpeople (data) {
+function newchin (data) {
     var content = document. createElement ('div');
-    content.className = "card";
+    content.className = "";
     var dat = new Date (data. postdate);
     var crt_date = (dat.getMonth () + 1) + '/' + dat.getDate () + '  ' + (dat .getHours() < 10 ? '0' + dat.getHours() : dat .getHours()) + ':' + (dat .getMinutes() < 10 ? '0' + dat.getMinutes() : dat.getMinutes()) ;
     var addHtml = 
     `
-    
-            
-                <div class="card-body">
-                    <a href="/newpeople-in?_id=${data._id}">
-                    <img class="" src="../photos/${data.ipth}">
-                    </a>
-                    <h5 class="card-title">${data.title}</h5>
-                    <a href="/newpeople-in?_id=${data._id}" class="ywbtn btn btn-bottom-right">了解更多</a>
-                </div>
-            
+        <div class="title">
+            <h1>${data.title}</h1>
+        </div>
+
+   <div class="why">
+        <div class="image-container">
+        <div class="image-wrapper">            
+            <p class="image-caption">${data.content}</p>
+            <img class="threetwo"src="../photos/${data.ipth}">
+        </div>           
+        </div>        
+    </div>   
     
     `;
     content.insertAdjacentHTML('beforeend', addHtml);
-    $('#newpeople').append(content);
+    $('#chin').append(content);
     }
     
     function getUrlVal(val) {
@@ -33,7 +35,7 @@ function newnewpeople (data) {
         return (false);
     }
     
-    function getnewpeople() {
+    function getchin() {
         var search = '';
     // if (getUrlVal ("type")) {
     // search += "type=" + getUrlVal ("type") + '&';
@@ -44,13 +46,12 @@ function newnewpeople (data) {
     if (getUrlVal ("title")) {
     search += "title=" + getUrlVal ("title") + '&';
     }
-    $.get("/getnewpeople?" + search, function (res, status) {
+    $.get("/getchin?" + search, function (res, status) {
     $('#type').val(res.type) ;
     for (var i = 0; i < res.data.length; i++) {
-    newnewpeople(res.data[i]);
+    newchin(res.data[i]);
     }
     });
     }
     
-    getnewpeople();
-
+    getchin();

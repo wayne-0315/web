@@ -86,6 +86,20 @@
 
         </form>
     </div>
+    <div class="inb">
+        <form action="" enctype="text/plain" accept-charset="UTF-8">
+            <input type="text" id="nameText" name="Name" value size="60" placeholder="姓名(name)" required><br>
+            <input type="email" id="emailText" name="Email" value size="60" placeholder="Email" required><br>
+            <input type="tel" id="telText" name="Phone" value size="60" aria-invalid="false" placeholder="電話(phone)" required><br>
+            <input type="text" id="subText" name="Subject" value size="60" aria-invalid="false" placeholder="主旨(Subject)" required><br>
+            <textarea name="your-message" id="bodyText" cols="40" rows="10" aria-required="true" aria-invalid="false" placeholder="你的訊息(Your-Message)" required></textarea>
+    
+            <div>
+                <input type="button" class="submit" value="送出訊息" onclick="submitHandler();">
+                <a id="mailTo"></a>
+            </div>
+        </form>
+        </div>
 
     <footer>
         <img src="img/ci.png" class="logo_foot">
@@ -108,6 +122,34 @@
         </div>
 
     </footer>
+
+    <script>
+        //宣告預設表單內容為空 （你想要的話也可以加東西）
+            var initSubject='',initBody='';
+         
+            //按下傳送按鈕後執行
+            function submitHandler(){
+                var to = "wayne90031548@gmail.com";//寫死的傳送對象 就是公司的信箱 不會顯示在網頁上
+                var name = nameText.value;//讀取ID為 nameTextuser 物件中的值
+                var email = emailText.value;
+                var tel = telText.value;
+                var subject = subText.value;
+        //把user填的資料都塞到 mail body 中
+                var body = ""+bodyText.value+'%0A%0A%0A';//%0A是換行 換了三行
+                    body += "From："+nameText.value+'%0A';
+                    body += "Email："+emailText.value+'%0A';
+                    body += "Tel："+telText.value;
+        //傳送的主要程式碼
+                mailTo.href="mailto:"+to+"?subject="+subject+"&body="+body;
+                mailTo.click();
+            }
+        //在body onload
+            function init(){
+                subText.value=initSubject;
+                toText.value=initTo;
+                bodyText.value=initBody;
+            }
+        </script>
 </body>
 
 </html>

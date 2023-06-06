@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const memberModel = require("../model/mem");
-// const timeModel = require("../model/time");
-// const sitModel = require("../model/membersit");
-// const pointModel = require("../model/point");
+const timeModel = require("../model/time");
+const sitModel = require("../model/membersit");
+const pointModel = require("../model/point");
 const lostModel = require("../model/lost");
 const LinkModel = require("../model/link");
 const mongoose = require('mongoose');
@@ -19,6 +19,10 @@ const newpeopleModel = require('../model/newpeople');
 const muslinModel = require('../model/muslin');
 const marketModel = require('../model/market');
 const buyModel = require('../model/buy');
+const childModel = require('../model/child');
+const chinModel = require('../model/chin');
+const parkModel = require('../model/park');
+const createModel = require('../model/create');
 
 const {
 	parse
@@ -564,7 +568,7 @@ var newnewpeople = new newpeopleModel({
 	content: req.body.content,
 	postdate: new Date(),
 	ipth: req.body.ipth,
-	aaa: req.body.aaa
+	aaa: req.body.aaa,
 	//photos: req.file.filename
 });
 
@@ -620,7 +624,7 @@ newpeopleModel.find({ _id: req.query._id }, function (err, data) {
 							postdate: data[0].postdate,
 							photos: data[0].photos,
 							ipth: data[0].ipth,
-							aaa: data[0].aaa
+							aaa: data[0].aaa,
 
 						}
 					});
@@ -925,6 +929,399 @@ buyModel.find({ _id: req.query._id }, function (err, data) {
 	}
 });
 });
+//-----------------child-----------------------
+router.post('/upload', upload.single("file"), function (req, res, next) {
+	
+	console.log('----1111------')
+	console.log(req.file)
+
+		var _child = new childModel({
+			photos: req.file.filename
+		});
+
+		_child.save(function (err, data) {
+			if (err) {
+				res.json({ "status": 1, "msg": "error" });
+			}
+			else {
+				res.json({
+					"status": 0, "msg": "success",
+					"photos": data.photos
+				});
+			}
+		});
+
+	
+	
+});
+router.post('/childupdate', function (req, res) {
+	console.log('----222------')
+console.log(req.body)
+var newchild = new childModel({
+	title: req.body.title,
+	content: req.body.content,
+	postdate: new Date(),
+	ipth: req.body.ipth,
+	aaa: req.body.aaa
+	//photos: req.file.filename
+});
+
+newchild.save(function (err, data) {
+	if (err) {
+		res.json({ "status": 1, "msg": "error" });
+	}
+	else {
+		res.json({ "status": 0, "msg": "success", "data": data });
+	}
+});
+});
+
+router.get('/getchild', function (req, res) {
+// var type = (req.query.type != undefined) ?
+//             req.query.type : "";
+// var account = (req.query.account != undefined) ?
+//               req.query.account : "";
+var title = (req.query.title != undefined) ?
+	req.query.title : "";
+childModel.find({
+	// "account": account != "" ? account :
+	//           { $regex: '.*' + account + '.*' },
+	// "type": {$regex: '.*' + type + '.*' },
+	"title": { $regex: '.*' + title + '.*' }
+}, function (err, data) {
+	if (err) {
+		console.log(err);
+	}
+	res.json({ "data": data });
+});
+});
+router.get('/getchildById', function (req, res) {
+childModel.find({ _id: req.query._id }, function (err, data) {
+	if (data == undefined) {
+		res.json({ "status": 1, "msg": "查無文章" });
+	}
+	else {
+		if (err) {
+			res.json({ "status": 1, "msg": "error" });
+		}
+		else {
+			memberModel.find({ id: data[0].id },
+				function (err, mem) {
+					res.json({
+						"status": 0, "msg": "success", "data": {
+							// account: data[0].account,
+							// type: data[0].type,
+							title: data[0].title,
+							content: data[0].content,
+							// like: data[0].like,
+							// comment: data[0].comment,
+							postdate: data[0].postdate,
+							photos: data[0].photos,
+							ipth: data[0].ipth,
+							aaa: data[0].aaa
+
+						}
+					});
+				});
+		}
+	}
+});
+});
+//-------------------chin-----------------------
+router.post('/upload', upload.single("file"), function (req, res, next) {
+	
+	console.log('----1111------')
+	console.log(req.file)
+
+		var _chin = new chinModel({
+			photos: req.file.filename
+		});
+
+		_chin.save(function (err, data) {
+			if (err) {
+				res.json({ "status": 1, "msg": "error" });
+			}
+			else {
+				res.json({
+					"status": 0, "msg": "success",
+					"photos": data.photos
+				});
+			}
+		});
+
+	
+	
+});
+router.post('/chinupdate', function (req, res) {
+	console.log('----222------')
+console.log(req.body)
+var newchin = new chinModel({
+	title: req.body.title,
+	content: req.body.content,
+	postdate: new Date(),
+	ipth: req.body.ipth,
+	aaa: req.body.aaa
+	//photos: req.file.filename
+});
+
+newchin.save(function (err, data) {
+	if (err) {
+		res.json({ "status": 1, "msg": "error" });
+	}
+	else {
+		res.json({ "status": 0, "msg": "success", "data": data });
+	}
+});
+});
+
+router.get('/getchin', function (req, res) {
+// var type = (req.query.type != undefined) ?
+//             req.query.type : "";
+// var account = (req.query.account != undefined) ?
+//               req.query.account : "";
+var title = (req.query.title != undefined) ?
+	req.query.title : "";
+chinModel.find({
+	// "account": account != "" ? account :
+	//           { $regex: '.*' + account + '.*' },
+	// "type": {$regex: '.*' + type + '.*' },
+	"title": { $regex: '.*' + title + '.*' }
+}, function (err, data) {
+	if (err) {
+		console.log(err);
+	}
+	res.json({ "data": data });
+});
+});
+router.get('/getchinById', function (req, res) {
+chinModel.find({ _id: req.query._id }, function (err, data) {
+	if (data == undefined) {
+		res.json({ "status": 1, "msg": "查無文章" });
+	}
+	else {
+		if (err) {
+			res.json({ "status": 1, "msg": "error" });
+		}
+		else {
+			memberModel.find({ id: data[0].id },
+				function (err, mem) {
+					res.json({
+						"status": 0, "msg": "success", "data": {
+							// account: data[0].account,
+							// type: data[0].type,
+							title: data[0].title,
+							content: data[0].content,
+							// like: data[0].like,
+							// comment: data[0].comment,
+							postdate: data[0].postdate,
+							photos: data[0].photos,
+							ipth: data[0].ipth,
+							aaa: data[0].aaa
+
+						}
+					});
+				});
+		}
+	}
+});
+});
+//-------------------------park------------------------------
+router.post('/upload', upload.single("file"), function (req, res, next) {
+	
+	console.log('----1111------')
+	console.log(req.file)
+
+		var _park = new parkModel({
+			photos: req.file.filename
+		});
+
+		_park.save(function (err, data) {
+			if (err) {
+				res.json({ "status": 1, "msg": "error" });
+			}
+			else {
+				res.json({
+					"status": 0, "msg": "success",
+					"photos": data.photos
+				});
+			}
+		});
+
+	
+	
+});
+router.post('/parkupdate', function (req, res) {
+	console.log('----222------')
+console.log(req.body)
+var newpark = new parkModel({
+	title: req.body.title,
+	content: req.body.content,
+	postdate: new Date(),
+	ipth: req.body.ipth,
+	aaa: req.body.aaa
+	//photos: req.file.filename
+});
+
+newpark.save(function (err, data) {
+	if (err) {
+		res.json({ "status": 1, "msg": "error" });
+	}
+	else {
+		res.json({ "status": 0, "msg": "success", "data": data });
+	}
+});
+});
+
+router.get('/getpark', function (req, res) {
+// var type = (req.query.type != undefined) ?
+//             req.query.type : "";
+// var account = (req.query.account != undefined) ?
+//               req.query.account : "";
+var title = (req.query.title != undefined) ?
+	req.query.title : "";
+parkModel.find({
+	// "account": account != "" ? account :
+	//           { $regex: '.*' + account + '.*' },
+	// "type": {$regex: '.*' + type + '.*' },
+	"title": { $regex: '.*' + title + '.*' }
+}, function (err, data) {
+	if (err) {
+		console.log(err);
+	}
+	res.json({ "data": data });
+});
+});
+router.get('/getparkById', function (req, res) {
+parkModel.find({ _id: req.query._id }, function (err, data) {
+	if (data == undefined) {
+		res.json({ "status": 1, "msg": "查無文章" });
+	}
+	else {
+		if (err) {
+			res.json({ "status": 1, "msg": "error" });
+		}
+		else {
+			memberModel.find({ id: data[0].id },
+				function (err, mem) {
+					res.json({
+						"status": 0, "msg": "success", "data": {
+							// account: data[0].account,
+							// type: data[0].type,
+							title: data[0].title,
+							content: data[0].content,
+							// like: data[0].like,
+							// comment: data[0].comment,
+							postdate: data[0].postdate,
+							photos: data[0].photos,
+							ipth: data[0].ipth,
+							aaa: data[0].aaa
+
+						}
+					});
+				});
+		}
+	}
+});
+});
+//-------------------create-----------------------
+router.post('/upload', upload.single("file"), function (req, res, next) {
+	
+	console.log('----1111------')
+	console.log(req.file)
+
+		var _create = new createModel({
+			photos: req.file.filename
+		});
+
+		_create.save(function (err, data) {
+			if (err) {
+				res.json({ "status": 1, "msg": "error" });
+			}
+			else {
+				res.json({
+					"status": 0, "msg": "success",
+					"photos": data.photos
+				});
+			}
+		});
+
+	
+	
+});
+router.post('/createupdate', function (req, res) {
+	console.log('----222------')
+console.log(req.body)
+var newcreate = new createModel({
+	title: req.body.title,
+	content: req.body.content,
+	postdate: new Date(),
+	ipth: req.body.ipth,
+	aaa: req.body.aaa
+	//photos: req.file.filename
+});
+
+newcreate.save(function (err, data) {
+	if (err) {
+		res.json({ "status": 1, "msg": "error" });
+	}
+	else {
+		res.json({ "status": 0, "msg": "success", "data": data });
+	}
+});
+});
+
+router.get('/getcreate', function (req, res) {
+// var type = (req.query.type != undefined) ?
+//             req.query.type : "";
+// var account = (req.query.account != undefined) ?
+//               req.query.account : "";
+var title = (req.query.title != undefined) ?
+	req.query.title : "";
+createModel.find({
+	// "account": account != "" ? account :
+	//           { $regex: '.*' + account + '.*' },
+	// "type": {$regex: '.*' + type + '.*' },
+	"title": { $regex: '.*' + title + '.*' }
+}, function (err, data) {
+	if (err) {
+		console.log(err);
+	}
+	res.json({ "data": data });
+});
+});
+router.get('/getcreateById', function (req, res) {
+createModel.find({ _id: req.query._id }, function (err, data) {
+	if (data == undefined) {
+		res.json({ "status": 1, "msg": "查無文章" });
+	}
+	else {
+		if (err) {
+			res.json({ "status": 1, "msg": "error" });
+		}
+		else {
+			memberModel.find({ id: data[0].id },
+				function (err, mem) {
+					res.json({
+						"status": 0, "msg": "success", "data": {
+							// account: data[0].account,
+							// type: data[0].type,
+							title: data[0].title,
+							content: data[0].content,
+							// like: data[0].like,
+							// comment: data[0].comment,
+							postdate: data[0].postdate,
+							photos: data[0].photos,
+							ipth: data[0].ipth,
+							aaa: data[0].aaa
+
+						}
+					});
+				});
+		}
+	}
+});
+});
+
 
 //-------------------------------------------------------------------------------------
 const isAuth = (req, res, next) => {
@@ -1239,6 +1636,26 @@ router.get('/buyupdate', isAuth, (req, res) => {
 });
 router.get('/buy-in', (req, res) => {
 	res.render("buy-in");
+	console.log("成功");
+});
+router.get('/childupdate', isAuth, (req, res) => {
+	res.render("childupdate");
+	console.log("成功");
+});
+router.get('/child-in', (req, res) => {
+	res.render("child-in");
+	console.log("成功");
+});
+router.get('/chinupdate', isAuth, (req, res) => {
+	res.render("chinupdate");
+	console.log("成功");
+});
+router.get('/parkupdate', isAuth, (req, res) => {
+	res.render("parkupdate");
+	console.log("成功");
+});
+router.get('/createupdate', isAuth, (req, res) => {
+	res.render("createupdate");
 	console.log("成功");
 });
 

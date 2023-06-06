@@ -1,4 +1,4 @@
-function addnewpeople() {
+function addcreate() {
     if ($('#title').val() == '' || $('#title').val() == null){
         alert('請輸入標題');
         return;
@@ -13,7 +13,6 @@ function addnewpeople() {
         content: $('#content').val().replace(/ /g, '&nbsp;').replace(/\n/g, "<br />"),
         ipth: $('#ipth').val(),
         aaa: $('#aaa').val(),
-        title1: $('#title1').val(),
     }
 
     var img = document.getElementById('u_img_file');
@@ -23,7 +22,7 @@ function addnewpeople() {
     }
     var fromData = new FormData();
     fromData.append('file', img.files[0]);
-    var url = "/upload1?id=" + $.cookie('userID');
+    var url = "/upload?id=" + $.cookie('userID');
     $.ajax({
         url: url,
         type: "POST",
@@ -41,10 +40,10 @@ function addnewpeople() {
         }
     });
 
-    $.post("/newpeopleupdate", postdata, function (res) {
+    $.post("/createupdate", postdata, function (res) {
         if (res.status == 0) {
             alert('發文成功');
-            location.href = '/newpeople';
+            location.href = '/create';
         }
     });
 }

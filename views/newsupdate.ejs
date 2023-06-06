@@ -22,10 +22,10 @@
 </head>
 
 <body>
-    <!-- 上方藍色專欄 !-->
+
     <nav>
         <ul>
-            <a href="index"><img src="img/LOGO.jpg" class="logo_top"></a>
+            <a href="index"><img src="img/logo.png" class="logo_top"></a>
             <li class="dropdown">
                 <a href="#" class="green-pad">報</a>
                 <ul class="dropdown-menu">
@@ -44,15 +44,15 @@
             <li class="dropdown">
                 <a href="#" class="oy-pad">夢</a>
                 <ul class="dropdown-menu">
-                    <li><a href="#" class="oy_1">手碟</a></li>
+                    <li><a href="childupdate" class="oy_1">手碟</a></li>
                 </ul>
             </li>
             <li class="dropdown">
                 <a href="#" class="lighto-pad">地</a>
                 <ul class="dropdown-menu">
                     <li><a href="marketupdate" class="lighto_1">忠貞市場</a></li>
-                    <li><a href="#" class="lighto_2">清真寺</a></li>
-                    <li><a href="#" class="lighto_3">雲南公園</a></li>
+                    <li><a href="chinupdate" class="lighto_2">清真寺</a></li>
+                    <li><a href="parkupdate" class="lighto_3">雲南公園</a></li>
                 </ul>
             </li>
             <li class="dropdown">
@@ -64,7 +64,7 @@
             <li class="dropdown">
                 <a href="#" class="dimand-pad">創</a>
                 <ul class="dropdown-menu">
-                    <li><a href="#" class="dimand_1">忠貞創生</a></li>
+                    <li><a href="createupdate" class="dimand_1">忠貞創生</a></li>
                 </ul>
             </li>
         
@@ -75,30 +75,11 @@
     </nav>
 
 
-    <!--遺失物!-->
+ 
     <div class="margin"></div>
 
     <div class="container1">
-            <!-- <form class="lostitem3" id="upload-form" action="/upload" method="post" enctype="multipart/form-data" style="background-color: #6a8745;">
-                
-                 <p style="margin: 0;">選擇圖片檔案</p>
-                <input type="file" name="image" id="upload-input" accept="image/*"/>
-                <img id="image" src="" alt="image preview" style="display: none;" />
-                <button id="submit" class="control" type="submit" onclick="addArticle()">上傳</button> -->
-                
-                <!-- <label for="field6">
-                    <span>內文</span>
-                    <br>
-                        <textarea name="" id="content" cols="30" rows="10"></textarea>
-                </label>
-                <br>
-                <label for="">
-                    <span>&nbsp;</span>
-                    
-                    
-                </label>
-                
-            </form> -->
+            
             <form class="lostitem3" id="upload-form" action="/upload" method="post" enctype="multipart/form-data" style="background-color: #ffffff;color: black;">
             <div class="w30leftblank"></div> <div class="form-style w40div">
                 <div style="width:100% ;float: left;">
@@ -143,7 +124,7 @@
                 <img src="img/white.jpg" alt="" class="" id="u_img" height="70%" width="70%">
                 <input id='u_img_file' type="file" name="file"/>
                 <textarea id="ipth"
-                class="textarea-field" cols="10" rows="2" name=""></textarea>
+                class="textarea-field" cols="15" rows="2" name="" placeholder="請輸入圖片名稱"></textarea>
                 <!-- <p style="margin: 0;">圖片</p> -->
                 </label>
                 <br>
@@ -176,18 +157,7 @@
                     reader.readAsDataURL(file);
                 });
             </script>
-            <!--
-                <textarea name="text" id="upload-text"></textarea>
 
-            <script>
-                document.getElementById('upload-text').addEventListener('change', function (event) {
-                    // 獲取輸入的文字
-                    const text = event.target.value;
-                    // 傳送文字到伺服器
-                    // ...
-                });
-            </script>
-            -->
             
             <br>
             <pre id="output"></pre>
@@ -206,56 +176,9 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
             <script type="text/javascript" src="./javascripts/addnews-in.js"></script>
             
-            <!--
-
-                 <a href="register"><button class="btn">re</button></a>
-            <form class="login-id" action="/register" method="post">
-                <input 
-                    class="control" 
-                    id="tt"
-                    name="tt"
-                    type="text" 
-                    placeholder="ID" 
-                />
-                <button class="control" type="submit" id="login">SUBMIT</button>
-            </form>
-            <form action="/process" method="POST">
-                <ul>
-                  <li>
-                    <input type="hidden" name="hush" val="hidden, but not secret!" />
-                  </li>
-                  <li>
-                    <label for="fieldColor">
-                      Your favorite color:
-                      <input type="text" id="fieldColor" name="color" />
-                    </label>
-                  </li>
-                </ul>
-                <button type="submit">Submit</button>
-              </form>
-            -->
-           
-            
-        
+   
         
     </div>
 
-    
-    
-    <footer>
-        <img src="img/LOGO.jpg" class="logo_foot">
-        <div class="oot1">
-            <h3>忠貞社區地方協會</h3>
-            <p>營業時間<br>星期一至星期五 8am~10pm</p>
-        </div>
 
-        <div class="oot2">
-            <p>工作據點<br>桃園市平鎮區貿五路36號</p>
-            <p>電子信箱<br>zcda10901@gmail.com</p>
-        </div>
-        <div class="oot2">
-            <p>聯絡電話<br>(03)4658200</p>
-        </div>
-
-    </footer>
 </body>

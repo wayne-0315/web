@@ -1,4 +1,4 @@
-function initnewpeople(data) {
+function initchild(data) {
     var head = "<h3>" + data.name + " ( <a class='person' \ href='blog.html?account=" + data.account + "'>" + data.account + "</a> ) " + "</h3>";
     $('#a_head').append(head);
     var a_date = new Date(data.postdate);
@@ -24,7 +24,7 @@ function initnewpeople(data) {
     </div>
     `;
     
-    $('#a_newpeople').append(content);
+    $('#a_child').append(content);
 }
 //時間 ${date}
 function getUrlVal(val) {
@@ -39,22 +39,21 @@ function getUrlVal(val) {
     return (false);
 }
 
-function getnewpeopleById() {
+function getchildById() {
     if (!getUrlVal("_id")) {
         //alert("查無文章");
         //location.href = '/lostupdate';
         return;
     }
-    $.get("/getnewpeopleById?_id=" + getUrlVal("_id"),
+    $.get("/getchildById?_id=" + getUrlVal("_id"),
     function (res, status) {
         if (res.status != 0) {
-            location.href = '/newpeople';
+            location.href = '/child';
         }
         else {
-            initnewpeople(res.data);
+            initchild(res.data);
         }
     });
 }
 
-getnewpeopleById();
-
+getchildById();

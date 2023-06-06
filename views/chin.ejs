@@ -66,19 +66,7 @@
             </a>
         </ul>
     </nav>
-    <div class="title">
-        <h1>清真寺</h1>
-    </div>
-
-   <div class="why">
-        <div class="image-container">
-        <div class="image-wrapper">            
-            <p class="image-caption">源約於1950年代中期泰緬邊境撤台，其中不少信奉伊斯蘭的穆斯林信徒，1964年回教協會募捐修建，1989和2022年整修成為今日的樣貌。
-                龍岡清真寺是北台灣重要伊斯蘭教信仰中心，也是推廣伊斯蘭教的重要據點，寺內有伊斯蘭會學院和宗教學校，提供宗教教育和文化課程。</p>
-            <img class="threetwo"src="img32/view/temple.jpg">
-        </div>           
-        </div>        
-    </div>
+    <div id="chin" class="all"></div>
     <footer>
         <img src="img/ci.png" class="logo_foot">
         <div class="oot1">
@@ -100,6 +88,29 @@
         </div>
 
     </footer>
+
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+        <script src="vendor/bootstrap/js/popper.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script src="vendor/select2/select2.min.js"></script>
+        <script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+        <script src="js/main.js"></script>
+        <script type="text/javascript" src="./javascripts/header.js"></script>
+        <script type="text/javascript" src="./javascripts/chin.js"></script>
+        <script type="text/javascript" src="./javascripts/chin-in.js"></script>
+        <script>
+            function initArticle(data) {
+        var content = `
+        
+        <p>${data.content}</p>`;
+        $('#a_chin').append(content);
+    }
+    initArticle(res.data);
+    getArticleById();
+        
+    
+        </script>
 </body>
 
 </html>

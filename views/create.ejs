@@ -64,18 +64,7 @@
             </a>
         </ul>
     </nav>
-    <div class="title">
-        <h1>忠貞創生</h1>
-    </div>
-   <!-- 內文 -->
-   <div class="why">
-        <div class="image-container">
-        <div class="image-wrapper">            
-            <p class="image-caption">由社區青年手拉手團隊，帶領社區跨年齡、族群、專業各地域，以具在地文化特色推動地方創生，為社區永續發展努力。</p>
-            <img class="threetwo"src="img32/create/customized_2.jpg">
-        </div>           
-        </div>        
-    </div>
+    <div id="create" class="all"></div>
     <footer>
         <img src="img/ci.png" class="logo_foot">
         <div class="oot1">
@@ -92,6 +81,29 @@
         </div>
 
     </footer>
+
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+        <script src="vendor/bootstrap/js/popper.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script src="vendor/select2/select2.min.js"></script>
+        <script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+        <script src="js/main.js"></script>
+        <script type="text/javascript" src="./javascripts/header.js"></script>
+        <script type="text/javascript" src="./javascripts/create.js"></script>
+        <script type="text/javascript" src="./javascripts/create-in.js"></script>
+        <script>
+            function initArticle(data) {
+        var content = `
+        
+        <p>${data.content}</p>`;
+        $('#a_create').append(content);
+    }
+    initArticle(res.data);
+    getArticleById();
+        
+    
+        </script>
 </body>
 
 </html>

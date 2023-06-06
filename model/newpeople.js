@@ -5,7 +5,7 @@ var newpeopleSchema = mongoose.Schema({
     postdate: Date,
     photos: String, 
     ipth: String,
-    aaa: String 
+    aaa: String,
     
 });
 newpeopleSchema.set('collection', 'newpeople');
