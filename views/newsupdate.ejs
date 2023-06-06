@@ -138,25 +138,7 @@
                 </form>
             </div>
             </form>
-            <script>
-                document.getElementById('upload-input').addEventListener('change', function (event) {
-                    
-                    // 獲取選擇的圖片
-                    const file = event.target.files[0];
-                    // 創建一個 FileReader 對象
-                    const reader = new FileReader();
-                    // 監聽 reader 的 load 事件，轉換圖片並顯示圖片
-                    reader.onload = function (event) {
-                        // 將圖片轉換為 data URL
-                        const dataURL = event.target.result;
-                        // 將 data URL 設置到 img 的 src 屬性中，顯示圖片
-                        document.getElementById('image').style.display = 'block';
-                        document.getElementById('image').src = dataURL;
-                    };
-                    // 讀取圖片
-                    reader.readAsDataURL(file);
-                });
-            </script>
+            
 
             
             <br>
