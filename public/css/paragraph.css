@@ -3,69 +3,101 @@
   justify-content: center;
 }
 
-.image-wrapper {
-  text-align: left;
+.image-wrapper:not(.image-caption) {
+  text-align: center;
   position: relative;
 }
 
-.image-caption {
+.image-wrapper .image-caption {
   font-size: 25px;
   margin-bottom: 20px;
-  justify-content: left;
+  text-align: left;
   width: 900px;
 }
 
-.buybtn {
-  border: 3px #e32c6c solid;
-  background-color: #fff;
-  font-weight: bold;
-  border-radius: 6px;
-  padding: 10px;
-  height: 50px;
-  margin-left: auto;
-  margin-right: auto;
+.image-wrapper img {
+  align-items: center;
   justify-content: center;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  display: flex;
+
+  width: 100%;
+  height: auto;
+  max-width: 560px;
+}
+/* .buybtn {
+  border: 3px #e32c6c  solid;
+  background-color: #fff;
+  border-radius: 6px;
+  width: 100px;
+  height: 50px;
+  color: #e32c6c;
+  font-family: Helvetica;
+  float: center;
 }
 
 .buybtn:hover {
   background-color: #e32c6c;
-  border: 3px #e32c6c solid;
+  border: 3px #fff solid;
+}
+.bbtn {
+  color: #e32c6c;
+  font-size: 25px;
+  display: flex;
+  width: 100px;
+  height: 50px;
+}
+
+.bbtn:hover .buybtn {
+  color: #fff;
+} */
+
+.bbtn {
+  border: 3px #e32c6c  solid;
+  background-color: #fff;
+  border-radius: 6px;
+  width: 100px;
+  height: 50px;
+  color: #e32c6c;
+  font-family: Helvetica;
+  float: center;
+}
+
+.bbtn:hover {
+  background-color: #e32c6c;
+  border: 3px #fff solid;
+}
+
+.buybtn {
+  color: #e32c6c;
+  font-size: 25px;
+  display: flex;
 }
 
 .buybtn:hover .bbtn {
   color: #fff;
 }
 
-a.bbtn {
-  float: center;
-  color: #e32c6c;
-  font-size: 20px;
-  text-decoration: none;
-}
-
-h1{
+h1 {
   font-weight: bold;
 }
 
-.image-wrapper img {
-  width: 100%;
-  height: auto;
-  max-width: 800px;
-  margin-right: 0 auto;
-  margin-left: 0 auto;
+h3{
+  color: black;
+  text-decoration: none;
 }
 
 @media (max-width: 768px) {
-  .image-wrapper img {
-    max-width: 650px;
+
+  .image-wrapper P{
+    max-width: 400px;
   }
 }
 
 @media (max-width: 1920px) {
   .image-wrapper img {
-    max-width: 900px;
+    max-width: 560px;
+  }
+  .image-wrapper P{
+    max-width: 560px;
   }
 }
+

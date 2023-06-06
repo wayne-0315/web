@@ -45,7 +45,8 @@ h4 {
     margin-top: 20px;
     margin-bottom: 20px;
 }
-.card{
+
+.card {
     height: 400px;
 }
 
@@ -78,6 +79,7 @@ a.pinkbtn:hover {
     background-color: #e32c6c;
     border: #e32c6c 3px solid;
 }
+
 a.pinkbtn:active {
     color: #fff;
     background-color: #e32c6c;
@@ -99,6 +101,7 @@ a.lightobtn:hover {
     background-color: #e95318;
     border: #e95318 3px solid;
 }
+
 a.lightobtn:active {
     color: #fff;
     background-color: #e95318;
@@ -109,8 +112,8 @@ a.ywbtn {
     float: right;
     position: row;
     background-color: white;
-    color: #ffdd5f ;
-    border: #ffdd5f  3px solid;
+    color: #ffdd5f;
+    border: #ffdd5f 3px solid;
     bottom: 10px;
     font-family: Helvetica;
     font-size: 18px;
@@ -118,17 +121,19 @@ a.ywbtn {
 
 a.ywbtn:hover {
     color: #fff;
-    background-color: #ffdd5f  ;
+    background-color: #ffdd5f;
     border: #ffdd5f 3px solid;
 }
 
 a.ywbtn:active {
-    background-color: #ffdd5f ;
+    background-color: #ffdd5f;
 }
+
 .ywbtn:not(.btn):active {
     background-color: #ffdd5f !important;
     border: #ffdd5f 3px solid;
-  }
+}
+
 a.dimandbtn {
     float: right;
     position: row;
@@ -151,12 +156,13 @@ a.dimandbtn:active {
     background-color: #0083ad;
     border: #0083ad 3px solid;
 }
+
 a.greenbtn {
     float: right;
     position: row;
     background-color: white;
-    color: #a8cd69 ;
-    border: #a8cd69  3px solid;
+    color: #a8cd69;
+    border: #a8cd69 3px solid;
     bottom: 10px;
     font-family: Helvetica;
     font-size: 18px;
@@ -164,14 +170,34 @@ a.greenbtn {
 
 a.greenbtn:hover {
     color: #fff;
-    background-color: #a8cd69 ;
-    border: #a8cd69  3px solid;
+    background-color: #a8cd69;
+    border: #a8cd69 3px solid;
 }
 
-a.greenbtn:active{
-    background-color: #a8cd69 ;
+a.greenbtn:active {
+    background-color: #a8cd69;
 }
 
 .center {
     text-align: center;
+}
+
+.greenbtn.btn-primary {
+    --bs-btn-active-bg: #a8cd69;
+    --bs-btn-active-border-color: #a8cd69;
+}
+
+.ywbtn.btn-primary {
+    --bs-btn-active-bg: #ffdd5f;
+    --bs-btn-active-border-color: #ffdd5f;
+}
+
+.lightobtn.btn-primary {
+    --bs-btn-active-bg: #e32c6c;
+    --bs-btn-active-border-color: #e32c6c;
+}
+
+.lightobtn.btn-primary {
+    --bs-btn-active-bg: #e95318;
+    --bs-btn-active-border-color: #e95318;
 }
