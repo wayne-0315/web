@@ -15,30 +15,30 @@ function addmuslin() {
         aaa: $('#aaa').val(),
     }
 
-    var img = document.getElementById('u_img_file');
-    if (!/.(gif|jpg|jpeg|png|GIF|JPG|PNG|JPEG)$/.test(img.value)) {
-        alert("圖片類型不正確");
-        return;
-    }
-    var fromData = new FormData();
-    fromData.append('file', img.files[0]);
-    var url = "/upload1?id=" + $.cookie('userID');
-    $.ajax({
-        url: url,
-        type: "POST",
-        data: fromData,
-        processData: false,
-        contentType: false,
-        success: function (res) {
-            if (res.status == 0) {
-                //alert("上傳成功");
-                //history.go(0);
-            }
-        },
-        error: function (err) {
-            console.log(err);
-        }
-    });
+//     var img = document.getElementById('u_img_file');
+//     if (!/.(gif|jpg|jpeg|png|GIF|JPG|PNG|JPEG)$/.test(img.value)) {
+//         alert("圖片類型不正確");
+//         return;
+//     }
+//     var fromData = new FormData();
+//     fromData.append('file', img.files[0]);
+//     var url = "/upload1?id=" + $.cookie('userID');
+//     $.ajax({
+//         url: url,
+//         type: "POST",
+//         data: fromData,
+//         processData: false,
+//         contentType: false,
+//         success: function (res) {
+//             if (res.status == 0) {
+//                 //alert("上傳成功");
+//                 //history.go(0);
+//             }
+//         },
+//         error: function (err) {
+//             console.log(err);
+//         }
+//     });
 
     $.post("/muslinupdate", postdata, function (res) {
         if (res.status == 0) {
