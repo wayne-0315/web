@@ -1590,7 +1590,7 @@ router.get('/news-in', (req, res) => {
 	res.render("news-in");
 	console.log("成功");
 });
-router.get('/cloudupdate', isAuth, (req, res) => {
+router.get('/cloudupdate', (req, res) => {
 	res.render("cloudupdate");
 	console.log("成功");
 });
@@ -1598,7 +1598,7 @@ router.get('/cloud-in', (req, res) => {
 	res.render("cloud-in");
 	console.log("成功");
 });
-router.get('/villageupdate', isAuth, (req, res) => {
+router.get('/villageupdate', (req, res) => {
 	res.render("villageupdate");
 	console.log("成功");
 });
@@ -1606,7 +1606,7 @@ router.get('/village-in', (req, res) => {
 	res.render("village-in");
 	console.log("成功");
 });
-router.get('/newpeopleupdate', isAuth, (req, res) => {
+router.get('/newpeopleupdate', (req, res) => {
 	res.render("newpeopleupdate");
 	console.log("成功");
 });
@@ -1614,7 +1614,7 @@ router.get('/newpeople-in', (req, res) => {
 	res.render("newpeople-in");
 	console.log("成功");
 });
-router.get('/muslinupdate', isAuth, (req, res) => {
+router.get('/muslinupdate', (req, res) => {
 	res.render("muslinupdate");
 	console.log("成功");
 });
@@ -1622,7 +1622,7 @@ router.get('/muslin-in', (req, res) => {
 	res.render("muslin-in");
 	console.log("成功");
 });
-router.get('/marketupdate', isAuth, (req, res) => {
+router.get('/marketupdate', (req, res) => {
 	res.render("marketupdate");
 	console.log("成功");
 });
@@ -1630,7 +1630,7 @@ router.get('/market-in', (req, res) => {
 	res.render("market-in");
 	console.log("成功");
 });
-router.get('/buyupdate', isAuth, (req, res) => {
+router.get('/buyupdate', (req, res) => {
 	res.render("buyupdate");
 	console.log("成功");
 });
@@ -1638,7 +1638,7 @@ router.get('/buy-in', (req, res) => {
 	res.render("buy-in");
 	console.log("成功");
 });
-router.get('/childupdate', isAuth, (req, res) => {
+router.get('/childupdate', (req, res) => {
 	res.render("childupdate");
 	console.log("成功");
 });
@@ -1646,15 +1646,15 @@ router.get('/child-in', (req, res) => {
 	res.render("child-in");
 	console.log("成功");
 });
-router.get('/chinupdate', isAuth, (req, res) => {
+router.get('/chinupdate', (req, res) => {
 	res.render("chinupdate");
 	console.log("成功");
 });
-router.get('/parkupdate', isAuth, (req, res) => {
+router.get('/parkupdate', (req, res) => {
 	res.render("parkupdate");
 	console.log("成功");
 });
-router.get('/createupdate', isAuth, (req, res) => {
+router.get('/createupdate', (req, res) => {
 	res.render("createupdate");
 	console.log("成功");
 });
