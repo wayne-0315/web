@@ -51,24 +51,24 @@ const { error } = require("console");
 //   }
 // });
 
-var storage = multer.diskStorage({
-	destination: function (req, file, cb) {
-		cb(null, './public/photos');
-	},
-	filename: function (req, file, cb) {
-		// 將圖片命名為原檔名
-		cb(null, file.originalname);
-		}
-	// filename: function (req, file, cb) {
-	// 	var str = file.originalname.split('.');
-	// 	cb(null, Date.now() + '.' + str[1]);
-	// }
-});
+// var storage = multer.diskStorage({
+// 	destination: function (req, file, cb) {
+// 		cb(null, './public/photos');
+// 	},
+// 	filename: function (req, file, cb) {
+// 		// 將圖片命名為原檔名
+// 		cb(null, file.originalname);
+// 		}
+// 	// filename: function (req, file, cb) {
+// 	// 	var str = file.originalname.split('.');
+// 	// 	cb(null, Date.now() + '.' + str[1]);
+// 	// }
+// });
 
-//創建 multer 中間件的實例
-const upload = multer({
-	storage: storage
-});
+// //創建 multer 中間件的實例
+// const upload = multer({
+// 	storage: storage
+// });
 
 // router.post('/upload', upload.single('image'), async (req, res, next) => {
 //   //console.log(req.file.path); // 顯示文件路徑				
