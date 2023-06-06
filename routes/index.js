@@ -71,7 +71,7 @@ const upload = multer({
 });
 
 // router.post('/upload', upload.single('image'), async (req, res, next) => {
-//   //console.log(req.file.path); // 顯示文件路徑
+//   //console.log(req.file.path); // 顯示文件路徑				
 //   //console.log(req.file.originalname); // 顯示文件名
 //   try {
 //     // 創建一個新的 PointDate 文檔
@@ -117,45 +117,45 @@ const upload = multer({
 // 	// })
 
 //這裡是單純儲存圖片
-router.post('/upload', upload.single("file"), function (req, res, next) {
+// router.post('/upload', upload.single("file"), function (req, res, next) {
 	
-	console.log('----1111------')
-	console.log(req.file)
+// 	console.log('----1111------')
+// 	console.log(req.file)
 
 	
-	//photoss = req.file.filename
-	//next();
-	// console.log(req.body)
+// 	//photoss = req.file.filename
+// 	//next();
+// 	// console.log(req.body)
 	
 		
 		
-		// if(err) {
+// 		// if(err) {
 			
-		// 	res.json({msg: 'Database server shut down'});
-		// 	return;
-		// };
-		var _article = new articleModel({
-			photos: req.file.filename
-		});
+// 		// 	res.json({msg: 'Database server shut down'});
+// 		// 	return;
+// 		// };
+// 		var _article = new articleModel({
+// 			photos: req.file.filename
+// 		});
 
-		//data.photos.push(req.file.filename)
+// 		//data.photos.push(req.file.filename)
 
-		// _article.save(function (err, data) {
-		// 	if (err) {
-		// 		res.json({ "status": 1, "msg": "error" });
-		// 	}
-		// 	else {
-		// 		res.json({
-		// 			"status": 0, "msg": "success",
-		// 			"photos": data.photos
-		// 		});
-		// 	}
-		// });
+// 		// _article.save(function (err, data) {
+// 		// 	if (err) {
+// 		// 		res.json({ "status": 1, "msg": "error" });
+// 		// 	}
+// 		// 	else {
+// 		// 		res.json({
+// 		// 			"status": 0, "msg": "success",
+// 		// 			"photos": data.photos
+// 		// 		});
+// 		// 	}
+// 		// });
 
 		
 	
 	
-});
+// });
 
 
 // 這裡是單純儲存文章
@@ -340,30 +340,30 @@ newsModel.find({ _id: req.query._id }, function (err, data) {
 });
 });
 //-------------------cloud-----------------------------
-router.post('/upload', upload.single("file"), function (req, res, next) {
+// router.post('/upload', upload.single("file"), function (req, res, next) {
 	
-	console.log('----1111------')
-	console.log(req.file)
+// 	console.log('----1111------')
+// 	console.log(req.file)
 
-		var _cloud = new cloudModel({
-			photos: req.file.filename
-		});
+// 		var _cloud = new cloudModel({
+// 			photos: req.file.filename
+// 		});
 
-		_cloud.save(function (err, data) {
-			if (err) {
-				res.json({ "status": 1, "msg": "error" });
-			}
-			else {
-				res.json({
-					"status": 0, "msg": "success",
-					"photos": data.photos
-				});
-			}
-		});
+// 		_cloud.save(function (err, data) {
+// 			if (err) {
+// 				res.json({ "status": 1, "msg": "error" });
+// 			}
+// 			else {
+// 				res.json({
+// 					"status": 0, "msg": "success",
+// 					"photos": data.photos
+// 				});
+// 			}
+// 		});
 
 	
 	
-});
+// });
 router.post('/cloudupdate', function (req, res) {
 	console.log('----222------')
 console.log(req.body)
@@ -438,30 +438,30 @@ cloudModel.find({ _id: req.query._id }, function (err, data) {
 });
 });
 //-----------village---------
-router.post('/upload', upload.single("file"), function (req, res, next) {
+// router.post('/upload', upload.single("file"), function (req, res, next) {
 	
-	console.log('----1111------')
-	console.log(req.file)
+// 	console.log('----1111------')
+// 	console.log(req.file)
 
-		var _village = new villageModel({
-			photos: req.file.filename
-		});
+// 		var _village = new villageModel({
+// 			photos: req.file.filename
+// 		});
 
-		_village.save(function (err, data) {
-			if (err) {
-				res.json({ "status": 1, "msg": "error" });
-			}
-			else {
-				res.json({
-					"status": 0, "msg": "success",
-					"photos": data.photos
-				});
-			}
-		});
+// 		_village.save(function (err, data) {
+// 			if (err) {
+// 				res.json({ "status": 1, "msg": "error" });
+// 			}
+// 			else {
+// 				res.json({
+// 					"status": 0, "msg": "success",
+// 					"photos": data.photos
+// 				});
+// 			}
+// 		});
 
 	
 	
-});
+// });
 router.post('/villageupdate', function (req, res) {
 	console.log('----222------')
 console.log(req.body)
@@ -536,30 +536,30 @@ villageModel.find({ _id: req.query._id }, function (err, data) {
 });
 });
 //-----------------newpeople---------------
-router.post('/upload', upload.single("file"), function (req, res, next) {
+// router.post('/upload', upload.single("file"), function (req, res, next) {
 	
-	console.log('----1111------')
-	console.log(req.file)
+// 	console.log('----1111------')
+// 	console.log(req.file)
 
-		var _newpeople = new newpeopleModel({
-			photos: req.file.filename
-		});
+// 		var _newpeople = new newpeopleModel({
+// 			photos: req.file.filename
+// 		});
 
-		_newpeople.save(function (err, data) {
-			if (err) {
-				res.json({ "status": 1, "msg": "error" });
-			}
-			else {
-				res.json({
-					"status": 0, "msg": "success",
-					"photos": data.photos
-				});
-			}
-		});
+// 		_newpeople.save(function (err, data) {
+// 			if (err) {
+// 				res.json({ "status": 1, "msg": "error" });
+// 			}
+// 			else {
+// 				res.json({
+// 					"status": 0, "msg": "success",
+// 					"photos": data.photos
+// 				});
+// 			}
+// 		});
 
 	
 	
-});
+// });
 router.post('/newpeopleupdate', function (req, res) {
 	console.log('----222------')
 console.log(req.body)
@@ -634,30 +634,30 @@ newpeopleModel.find({ _id: req.query._id }, function (err, data) {
 });
 });
 //-------------------------muslin-----------------------
-router.post('/upload', upload.single("file"), function (req, res, next) {
+// router.post('/upload', upload.single("file"), function (req, res, next) {
 	
-	console.log('----1111------')
-	console.log(req.file)
+// 	console.log('----1111------')
+// 	console.log(req.file)
 
-		var _muslin = new muslinModel({
-			photos: req.file.filename
-		});
+// 		var _muslin = new muslinModel({
+// 			photos: req.file.filename
+// 		});
 
-		_muslin.save(function (err, data) {
-			if (err) {
-				res.json({ "status": 1, "msg": "error" });
-			}
-			else {
-				res.json({
-					"status": 0, "msg": "success",
-					"photos": data.photos
-				});
-			}
-		});
+// 		_muslin.save(function (err, data) {
+// 			if (err) {
+// 				res.json({ "status": 1, "msg": "error" });
+// 			}
+// 			else {
+// 				res.json({
+// 					"status": 0, "msg": "success",
+// 					"photos": data.photos
+// 				});
+// 			}
+// 		});
 
 	
 	
-});
+// });
 router.post('/muslinupdate', function (req, res) {
 	console.log('----222------')
 console.log(req.body)
@@ -732,30 +732,30 @@ muslinModel.find({ _id: req.query._id }, function (err, data) {
 });
 });
 //-----------------market---------------------
-router.post('/upload', upload.single("file"), function (req, res, next) {
+// router.post('/upload', upload.single("file"), function (req, res, next) {
 	
-	console.log('----1111------')
-	console.log(req.file)
+// 	console.log('----1111------')
+// 	console.log(req.file)
 
-		var _market = new marketModel({
-			photos: req.file.filename
-		});
+// 		var _market = new marketModel({
+// 			photos: req.file.filename
+// 		});
 
-		_market.save(function (err, data) {
-			if (err) {
-				res.json({ "status": 1, "msg": "error" });
-			}
-			else {
-				res.json({
-					"status": 0, "msg": "success",
-					"photos": data.photos
-				});
-			}
-		});
+// 		_market.save(function (err, data) {
+// 			if (err) {
+// 				res.json({ "status": 1, "msg": "error" });
+// 			}
+// 			else {
+// 				res.json({
+// 					"status": 0, "msg": "success",
+// 					"photos": data.photos
+// 				});
+// 			}
+// 		});
 
 	
 	
-});
+// });
 router.post('/marketupdate', function (req, res) {
 	console.log('----222------')
 console.log(req.body)
@@ -830,30 +830,30 @@ marketModel.find({ _id: req.query._id }, function (err, data) {
 });
 });
 //--------------buy-------------
-router.post('/upload', upload.single("file"), function (req, res, next) {
+// router.post('/upload', upload.single("file"), function (req, res, next) {
 	
-	console.log('----1111------')
-	console.log(req.file)
+// 	console.log('----1111------')
+// 	console.log(req.file)
 
-		var _buy = new buyModel({
-			photos: req.file.filename
-		});
+// 		var _buy = new buyModel({
+// 			photos: req.file.filename
+// 		});
 
-		_buy.save(function (err, data) {
-			if (err) {
-				res.json({ "status": 1, "msg": "error" });
-			}
-			else {
-				res.json({
-					"status": 0, "msg": "success",
-					"photos": data.photos
-				});
-			}
-		});
+// 		_buy.save(function (err, data) {
+// 			if (err) {
+// 				res.json({ "status": 1, "msg": "error" });
+// 			}
+// 			else {
+// 				res.json({
+// 					"status": 0, "msg": "success",
+// 					"photos": data.photos
+// 				});
+// 			}
+// 		});
 
 	
 	
-});
+// });
 router.post('/buyupdate', function (req, res) {
 	console.log('----222------')
 console.log(req.body)
@@ -930,30 +930,30 @@ buyModel.find({ _id: req.query._id }, function (err, data) {
 });
 });
 //-----------------child-----------------------
-router.post('/upload', upload.single("file"), function (req, res, next) {
+// router.post('/upload', upload.single("file"), function (req, res, next) {
 	
-	console.log('----1111------')
-	console.log(req.file)
+// 	console.log('----1111------')
+// 	console.log(req.file)
 
-		var _child = new childModel({
-			photos: req.file.filename
-		});
+// 		var _child = new childModel({
+// 			photos: req.file.filename
+// 		});
 
-		_child.save(function (err, data) {
-			if (err) {
-				res.json({ "status": 1, "msg": "error" });
-			}
-			else {
-				res.json({
-					"status": 0, "msg": "success",
-					"photos": data.photos
-				});
-			}
-		});
+// 		_child.save(function (err, data) {
+// 			if (err) {
+// 				res.json({ "status": 1, "msg": "error" });
+// 			}
+// 			else {
+// 				res.json({
+// 					"status": 0, "msg": "success",
+// 					"photos": data.photos
+// 				});
+// 			}
+// 		});
 
 	
 	
-});
+// });
 router.post('/childupdate', function (req, res) {
 	console.log('----222------')
 console.log(req.body)
@@ -1028,30 +1028,30 @@ childModel.find({ _id: req.query._id }, function (err, data) {
 });
 });
 //-------------------chin-----------------------
-router.post('/upload', upload.single("file"), function (req, res, next) {
+// router.post('/upload', upload.single("file"), function (req, res, next) {
 	
-	console.log('----1111------')
-	console.log(req.file)
+// 	console.log('----1111------')
+// 	console.log(req.file)
 
-		var _chin = new chinModel({
-			photos: req.file.filename
-		});
+// 		var _chin = new chinModel({
+// 			photos: req.file.filename
+// 		});
 
-		_chin.save(function (err, data) {
-			if (err) {
-				res.json({ "status": 1, "msg": "error" });
-			}
-			else {
-				res.json({
-					"status": 0, "msg": "success",
-					"photos": data.photos
-				});
-			}
-		});
+// 		_chin.save(function (err, data) {
+// 			if (err) {
+// 				res.json({ "status": 1, "msg": "error" });
+// 			}
+// 			else {
+// 				res.json({
+// 					"status": 0, "msg": "success",
+// 					"photos": data.photos
+// 				});
+// 			}
+// 		});
 
 	
 	
-});
+// });
 router.post('/chinupdate', function (req, res) {
 	console.log('----222------')
 console.log(req.body)
@@ -1126,30 +1126,30 @@ chinModel.find({ _id: req.query._id }, function (err, data) {
 });
 });
 //-------------------------park------------------------------
-router.post('/upload', upload.single("file"), function (req, res, next) {
+// router.post('/upload', upload.single("file"), function (req, res, next) {
 	
-	console.log('----1111------')
-	console.log(req.file)
+// 	console.log('----1111------')
+// 	console.log(req.file)
 
-		var _park = new parkModel({
-			photos: req.file.filename
-		});
+// 		var _park = new parkModel({
+// 			photos: req.file.filename
+// 		});
 
-		_park.save(function (err, data) {
-			if (err) {
-				res.json({ "status": 1, "msg": "error" });
-			}
-			else {
-				res.json({
-					"status": 0, "msg": "success",
-					"photos": data.photos
-				});
-			}
-		});
+// 		_park.save(function (err, data) {
+// 			if (err) {
+// 				res.json({ "status": 1, "msg": "error" });
+// 			}
+// 			else {
+// 				res.json({
+// 					"status": 0, "msg": "success",
+// 					"photos": data.photos
+// 				});
+// 			}
+// 		});
 
 	
 	
-});
+// });
 router.post('/parkupdate', function (req, res) {
 	console.log('----222------')
 console.log(req.body)
@@ -1224,30 +1224,30 @@ parkModel.find({ _id: req.query._id }, function (err, data) {
 });
 });
 //-------------------create-----------------------
-router.post('/upload', upload.single("file"), function (req, res, next) {
+// router.post('/upload', upload.single("file"), function (req, res, next) {
 	
-	console.log('----1111------')
-	console.log(req.file)
+// 	console.log('----1111------')
+// 	console.log(req.file)
 
-		var _create = new createModel({
-			photos: req.file.filename
-		});
+// 		var _create = new createModel({
+// 			photos: req.file.filename
+// 		});
 
-		_create.save(function (err, data) {
-			if (err) {
-				res.json({ "status": 1, "msg": "error" });
-			}
-			else {
-				res.json({
-					"status": 0, "msg": "success",
-					"photos": data.photos
-				});
-			}
-		});
+// 		_create.save(function (err, data) {
+// 			if (err) {
+// 				res.json({ "status": 1, "msg": "error" });
+// 			}
+// 			else {
+// 				res.json({
+// 					"status": 0, "msg": "success",
+// 					"photos": data.photos
+// 				});
+// 			}
+// 		});
 
 	
 	
-});
+// });
 router.post('/createupdate', function (req, res) {
 	console.log('----222------')
 console.log(req.body)
