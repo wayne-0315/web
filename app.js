@@ -6,7 +6,6 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require("mongoose");
-const MongoStore = require("connect-mongo");
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -46,11 +45,11 @@ app.use(
     secret: process.env.sessionSecret,
     resave: false,
     saveUninitialized: false,
-    store: MongoStore.create({
-      mongoUrl: process.env.DBServerUrl,
-      collection: "session",
-      ttl: 60 * 24, // (default: 14 days)
-    }),
+    // store: MongoStore.create({
+    //   mongoUrl: process.env.DBServerUrl,
+    //   collection: "session",
+    //   ttl: 60 * 24, // (default: 14 days)
+    // }),
   })
 );
 app.use('/blog', blogRouter);
