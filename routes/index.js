@@ -242,7 +242,7 @@ router.get('/getArticleById', function (req, res) {
 	});
 });
 // -------------------------------news-------------------------------------------------
-router.post('/upload', upload.single("file"), function (req, res, next) {
+// router.post('/upload', upload.single("file"), function (req, res, next) {
 	
 // 	console.log('----1111------')
 // 	console.log(req.file)
@@ -265,7 +265,7 @@ router.post('/upload', upload.single("file"), function (req, res, next) {
 
 	
 	
-});
+// });
 router.post('/newsupdate', function (req, res) {
 	console.log('----222------')
 console.log(req.body)
