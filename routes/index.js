@@ -1582,7 +1582,7 @@ router.get('/cont', (req, res) => {
 	res.render("cont");
 	console.log("成功");
 });
-router.get('/newsupdate', isAuth, (req, res) => {
+router.get('/newsupdate', (req, res) => {
 	res.render("newsupdate");
 	console.log("成功");
 });
