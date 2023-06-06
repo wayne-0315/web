@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const memberModel = require("../model/mem");
-const timeModel = require("../model/time");
-const sitModel = require("../model/membersit");
-const pointModel = require("../model/point");
+// const timeModel = require("../model/time");
+// const sitModel = require("../model/membersit");
+// const pointModel = require("../model/point");
 const lostModel = require("../model/lost");
 const LinkModel = require("../model/link");
 const mongoose = require('mongoose');
@@ -23,7 +23,7 @@ const buyModel = require('../model/buy');
 const {
 	parse
 } = require("dotenv");
-const multer = require('multer');
+const multer = require('multer'); 
 const { error } = require("console");
 
 // const storage = multer.diskStorage({
@@ -1464,196 +1464,196 @@ router.post("/members", async (req, res) => {
 	res.send(message);
 });
 
-router.get('/time', isAuth, async (req, res) => {
+// router.get('/time', isAuth, async (req, res) => {
 
-	pointModel.countDocuments({
-		id: req.session.name
-	}, (err, count) => {
-		if (count > 0) {
-			if (count % 3 == 0) {
-				setTimeout(() => {
-					res.render('time', {
-						time: 0
-					});
-				}, 604800000);
-			} else {
-				res.render('time', {
-					time: 0
-				});
-			}
-		} else {
-			res.render('time', {
-				time: 0
-			});
-		}
-	});
-	console.log(req.session);
-	console.log("time成功");
-});
+// 	pointModel.countDocuments({
+// 		id: req.session.name
+// 	}, (err, count) => {
+// 		if (count > 0) {
+// 			if (count % 3 == 0) {
+// 				setTimeout(() => {
+// 					res.render('time', {
+// 						time: 0
+// 					});
+// 				}, 604800000);
+// 			} else {
+// 				res.render('time', {
+// 					time: 0
+// 				});
+// 			}
+// 		} else {
+// 			res.render('time', {
+// 				time: 0
+// 			});
+// 		}
+// 	});
+// 	console.log(req.session);
+// 	console.log("time成功");
+// });
 
-router.post("/time", async (req, res) => {
+// router.post("/time", async (req, res) => {
 
-	const {
-		get_date,
-		get_region
-	} = req.body;
-	if (!get_date || !get_region) {
-		return res.render("time", {
-			time: 0
-		});
-	}
-	let time = await timeModel.findOne({
-		get_date
-	});
+// 	const {
+// 		get_date,
+// 		get_region
+// 	} = req.body;
+// 	if (!get_date || !get_region) {
+// 		return res.render("time", {
+// 			time: 0
+// 		});
+// 	}
+// 	let time = await timeModel.findOne({
+// 		get_date
+// 	});
 
-	time = new timeModel({
-		get_date,
-		get_region
-	});
-	const result = await time.save();
+// 	time = new timeModel({
+// 		get_date,
+// 		get_region
+// 	});
+// 	const result = await time.save();
 
-	req.session.time = time.get_date;
-	req.session.region = time.get_region;
-	const date = {
-		date: req.session.time
-	};
+// 	req.session.time = time.get_date;
+// 	req.session.region = time.get_region;
+// 	const date = {
+// 		date: req.session.time
+// 	};
 
-	const region = {
-		region: req.session.region
-	};
+// 	const region = {
+// 		region: req.session.region
+// 	};
 
-	res.render('sit', {
-		sit_date: date,
-		sit_region: region
-	});
+// 	res.render('sit', {
+// 		sit_date: date,
+// 		sit_region: region
+// 	});
 
-	console.log(date, region);
-	console.log("sit成功");
+// 	console.log(date, region);
+// 	console.log("sit成功");
 
-	console.log(get_date, get_region);
+// 	console.log(get_date, get_region);
 
-});
+// });
 
-router.get('/sit', isAuth, (req, res) => {
+// router.get('/sit', isAuth, (req, res) => {
 
-	const date = {
-		date: req.session.time
-	};
+// 	const date = {
+// 		date: req.session.time
+// 	};
 
-	const region = {
-		region: req.session.region
-	};
+// 	const region = {
+// 		region: req.session.region
+// 	};
 
-	res.render('sit', {
-		sit_date: date,
-		sit_region: region
-	});
+// 	res.render('sit', {
+// 		sit_date: date,
+// 		sit_region: region
+// 	});
 
-	console.log(date, region);
-	console.log("sit成功");
+// 	console.log(date, region);
+// 	console.log("sit成功");
 
-});
-
-
-router.post("/sit", async (req, res) => {
-
-	const sitId = req.body.sitId;
-	console.log(sitId);
-	req.session.sitid = sitId;
-
-	const {
-		id,
-		date,
-		region,
-		sit
-	} = req.body;
-
-	let memsit = await sitModel.findOne({
-		id
-	});
-
-	if (!memsit) {
-		memsit = new sitModel({
-			id: req.session.name,
-			date: req.session.time,
-			region: req.session.region,
-			sit: req.session.sitid
-		});
-	}
+// });
 
 
-	let sit2 = await sitModel.findOne({
-		date: memsit.date,
-		region: memsit.region,
-		sit: memsit.sit
-	});
+// router.post("/sit", async (req, res) => {
 
-	let sit3 = await sitModel.findOne({
-		id: memsit.id,
-		date: memsit.date
-	});
+// 	const sitId = req.body.sitId;
+// 	console.log(sitId);
+// 	req.session.sitid = sitId;
 
-	if (sit3) {
-		res.render("time", {
-			time: 2
-		});
-		console.log("已被登記");
-	} else {
-		if (sit2) {
-			res.render("time", {
-				time: 1
-			});
-			console.log("已被登記");
-		} else {
-			const result = await memsit.save();
+// 	const {
+// 		id,
+// 		date,
+// 		region,
+// 		sit
+// 	} = req.body;
 
-			const id2 = req.session.name;
-			const todayStr = new Date().toISOString().slice(0, 10);
+// 	let memsit = await sitModel.findOne({
+// 		id
+// 	});
 
-			// 找尋符合條件的所有sit資料
-			const sits = await sitModel.find({
-				id: id2
-			});
-			// 找尋符合條件的所有point資料
-			const points = await pointModel.find({
-				id: id2
-			});
+// 	if (!memsit) {
+// 		memsit = new sitModel({
+// 			id: req.session.name,
+// 			date: req.session.time,
+// 			region: req.session.region,
+// 			sit: req.session.sitid
+// 		});
+// 	}
 
-			// 檢查今天是否有sit資料
-			let todaySits = sits.filter(sit => sit.date === todayStr);
-			if (sits.length === 0) {
-				console.log('沒有找到sit資料');
-				return res.render('members', {
-					sitSchema: {},
-					pointSchema: points,
-					myname: req.session.name,
-					num: points.length,
-					docs: 0
-				});
-			} else if (todaySits.length === 0) {
-				console.log(`今天沒有sit資料`);
-				return res.render('members', {
-					sitSchema: sits,
-					pointSchema: points,
-					myname: req.session.name,
-					num: points.length,
-					docs: 0
-				});
-			}
 
-			// 有今天的sit資料, 顯示members頁面
-			console.log(`找到 ${todaySits.length} 筆今天的sit資料`);
-			res.render('members', {
-				sitSchema: todaySits,
-				pointSchema: points,
-				myname: req.session.name,
-				num: points.length,
-				docs: todaySits.length
-			});
-		}
-	}
+// 	let sit2 = await sitModel.findOne({
+// 		date: memsit.date,
+// 		region: memsit.region,
+// 		sit: memsit.sit
+// 	});
 
-});
+// 	let sit3 = await sitModel.findOne({
+// 		id: memsit.id,
+// 		date: memsit.date
+// 	});
+
+// 	if (sit3) {
+// 		res.render("time", {
+// 			time: 2
+// 		});
+// 		console.log("已被登記");
+// 	} else {
+// 		if (sit2) {
+// 			res.render("time", {
+// 				time: 1
+// 			});
+// 			console.log("已被登記");
+// 		} else {
+// 			const result = await memsit.save();
+
+// 			const id2 = req.session.name;
+// 			const todayStr = new Date().toISOString().slice(0, 10);
+
+// 			// 找尋符合條件的所有sit資料
+// 			const sits = await sitModel.find({
+// 				id: id2
+// 			});
+// 			// 找尋符合條件的所有point資料
+// 			const points = await pointModel.find({
+// 				id: id2
+// 			});
+
+// 			// 檢查今天是否有sit資料
+// 			let todaySits = sits.filter(sit => sit.date === todayStr);
+// 			if (sits.length === 0) {
+// 				console.log('沒有找到sit資料');
+// 				return res.render('members', {
+// 					sitSchema: {},
+// 					pointSchema: points,
+// 					myname: req.session.name,
+// 					num: points.length,
+// 					docs: 0
+// 				});
+// 			} else if (todaySits.length === 0) {
+// 				console.log(`今天沒有sit資料`);
+// 				return res.render('members', {
+// 					sitSchema: sits,
+// 					pointSchema: points,
+// 					myname: req.session.name,
+// 					num: points.length,
+// 					docs: 0
+// 				});
+// 			}
+
+// 			// 有今天的sit資料, 顯示members頁面
+// 			console.log(`找到 ${todaySits.length} 筆今天的sit資料`);
+// 			res.render('members', {
+// 				sitSchema: todaySits,
+// 				pointSchema: points,
+// 				myname: req.session.name,
+// 				num: points.length,
+// 				docs: todaySits.length
+// 			});
+// 		}
+// 	}
+
+// });
 
 
 
