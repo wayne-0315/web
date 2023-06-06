@@ -10,7 +10,9 @@ var articleSchema = mongoose.Schema({
     // comment: Array,
     postdate: Date,
     photos: String, 
-    ipth: String 
+    ipth: String,
+    aaa: String,
+    yt: String 
     
 });
 articleSchema.set('collection', 'article');

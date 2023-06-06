@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="css/navfot.css">
     <link rel="stylesheet" href="css/card.css">
     <link rel="stylesheet" href="css/paragraph.css">
+    <link rel="stylesheet" href="css/backbtn.js">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/backbtn.css">
     <title>雲南</title>
 
 </head>
@@ -18,7 +21,7 @@
 <body>
     <nav>
         <ul>
-            <a href="index"><img src="img/LOGO.jpg" class="logo_top"></a>
+            <a href="index"><img src="img/logo.png" class="logo_top"></a>
             <li class="dropdown">
                 <a href="#" class="green-pad">報</a>
                 <ul class="dropdown-menu">
@@ -60,103 +63,18 @@
                     <li><a href="create" class="dimand_1">忠貞創生</a></li>
                 </ul>
             </li>
-        
-            <button class="conbtn">
-                <a href="connection" class="btna">找我</a>
-            </button>
+            <a href="connection" class="btna">
+                <button class="conbtn">找我 </button>
+            </a>
         </ul>
     </nav>
 
     <div class="title">
         <h1>雲南</h1>
     </div>
-
-    <div class="all">
-        <div class="card">
-            <div class="card-body">
-                <a href="pu">
-                    <img src="img/cloud/pu.png">
-                </a>
-                <h5 class="card-title">雲南米干/米線/粑粑絲</h5>
-                <a href="pu" class="ywbtn btn btn-primary btn-bottom-right">了解更多</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                <a href="over">
-                    <img src="img/cloud/over.jpg">
-                </a>
-                <h5 class="card-title">雲南過橋米線</h5>
-                <a href="over" class="ywbtn btn btn-primary btn-bottom-right">了解更多</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                <a href="bean">
-                    <img src="img/cloud/bean.png">
-                </a>
-                <h5 class="card-title">雲南豌豆粉</h5>
-                <a href="bean" class="ywbtn btn btn-primary btn-bottom-right">了解更多</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                <a href="bag">
-                    <img src="img/cloud/bag.png">
-                </a>
-                <h5 class="card-title">雲南破酥包</h5>
-                <a href="bag" class="ywbtn btn btn-primary btn-bottom-right">了解更多</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                <a href="spicynoodle">
-                    <img src="img/cloud/spicynoodle.png">
-                </a>
-                <h5 class="card-title">雲南辣麵</h5>
-                <a href="spicynoodle" class="ywbtn btn btn-primary btn-bottom-right">了解更多</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                <a href="slice">
-                    <img src="img/cloud/slice.png">
-                </a>
-                <h5 class="card-title">雲南大薄片</h5>
-                <a href="slice" class="ywbtn btn btn-primary btn-bottom-right">了解更多</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                <a href="black">
-                    <img src="img/cloud/black.png">
-                </a>
-                <h5 class="card-title">雲南黑糯米粑粑</h5>
-                <a href="black" class="ywbtn btn btn-primary btn-bottom-right">了解更多</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                <a href="spicychicken">
-                    <img src="img/cloud/spicychicken.png">
-                </a>
-                <h5 class="card-title">雲南椒麻雞</h5>
-                <a href="spicychicken" class="ywbtn btn btn-primary btn-bottom-right">了解更多</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                <a href="cow">
-                    <img src="img/cloud/cow.png">
-                </a>
-                <h5 class="card-title">雲南牛干巴</h5>
-                <a href="cow" class="ywbtn btn btn-primary btn-bottom-right">了解更多</a>
-            </div>
-        </div>
-    </div>
-
+    <div id="cloud" class="all"></div>
     <footer>
-        <img src="img/LOGO.jpg" class="logo_foot">
+        <img src="img/ci.png" class="logo_foot">
         <div class="oot1">
             <h3>忠貞社區地方協會</h3>
             <p>營業時間<br>星期一至星期五 8am~10pm</p>
@@ -168,9 +86,38 @@
         </div>
         <div class="oot2">
             <p>聯絡電話<br>(03)4658200</p>
+            <a href="https://www.facebook.com/groups/2529645990457962/?locale=zh_TW"><img src="/icon/fb.png"
+                    class="fot_icon"></a>
+            <a href="https://www.instagram.com/zhongzhen_community/"><img src="/icon/ig.png" class="fot_icon"></a>
+            <a href="https://www.youtube.com/@zcdasuperpower"><img src="/icon/yt.png" class="fot_icon"></a>
+            <a href="https://novapanshandpan.com"><img src="/icon/nova.png" class="fot_icon"></a>
         </div>
+
     </footer>
 
+
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+        <script src="vendor/bootstrap/js/popper.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script src="vendor/select2/select2.min.js"></script>
+        <script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+        <script src="js/main.js"></script>
+        <script type="text/javascript" src="./javascripts/header.js"></script>
+        <script type="text/javascript" src="./javascripts/cloud.js"></script>
+        <script type="text/javascript" src="./javascripts/cloud-in.js"></script>
+        <script>
+            function initArticle(data) {
+        var content = `
+        
+        <p>${data.content}</p>`;
+        $('#a_cloud').append(content);
+    }
+    initArticle(res.data);
+    getArticleById();
+        
+    
+        </script>
 </body>
 
 </html>

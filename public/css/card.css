@@ -37,15 +37,11 @@
 }
 
 h5 {
-    /* font-weight: bold; */
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
-
-
 h4 {
-    /* font-weight:bold; */
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -82,6 +78,11 @@ a.pinkbtn:hover {
     background-color: #e32c6c;
     border: #e32c6c 3px solid;
 }
+a.pinkbtn:active {
+    color: #fff;
+    background-color: #e32c6c;
+    border: #e32c6c 3px solid;
+}
 
 a.lightobtn {
     float: right;
@@ -98,13 +99,18 @@ a.lightobtn:hover {
     background-color: #e95318;
     border: #e95318 3px solid;
 }
+a.lightobtn:active {
+    color: #fff;
+    background-color: #e95318;
+    border: #e95318 3px solid;
+}
 
 a.ywbtn {
     float: right;
     position: row;
     background-color: white;
-    color: #fdab2b;
-    border: #fdab2b 3px solid;
+    color: #ffdd5f ;
+    border: #ffdd5f  3px solid;
     bottom: 10px;
     font-family: Helvetica;
     font-size: 18px;
@@ -112,10 +118,17 @@ a.ywbtn {
 
 a.ywbtn:hover {
     color: #fff;
-    background-color: #fdab2b;
-    border: #fdab2b 3px solid;
+    background-color: #ffdd5f  ;
+    border: #ffdd5f 3px solid;
 }
 
+a.ywbtn:active {
+    background-color: #ffdd5f ;
+}
+.ywbtn:not(.btn):active {
+    background-color: #ffdd5f !important;
+    border: #ffdd5f 3px solid;
+  }
 a.dimandbtn {
     float: right;
     position: row;
@@ -133,6 +146,11 @@ a.dimandbtn:hover {
     border: #0083ad 3px solid;
 }
 
+a.dimandbtn:active {
+    color: #fff;
+    background-color: #0083ad;
+    border: #0083ad 3px solid;
+}
 a.greenbtn {
     float: right;
     position: row;
@@ -148,6 +166,10 @@ a.greenbtn:hover {
     color: #fff;
     background-color: #a8cd69 ;
     border: #a8cd69  3px solid;
+}
+
+a.greenbtn:active{
+    background-color: #a8cd69 ;
 }
 
 .center {

@@ -18,7 +18,7 @@
 <body>
     <nav>
         <ul>
-            <a href="index"><img src="img/LOGO.jpg" class="logo_top"></a>
+            <a href="index"><img src="img/logo.png" class="logo_top"></a>
             <li class="dropdown">
                 <a href="#" class="green-pad">報</a>
                 <ul class="dropdown-menu">
@@ -60,73 +60,17 @@
                     <li><a href="create" class="dimand_1">忠貞創生</a></li>
                 </ul>
             </li>
-        
-            <button class="conbtn">
-                <a href="connection" class="btna">找我</a>
-            </button>
+            <a href="connection" class="btna">
+                <button class="conbtn">找我 </button>
+            </a>
         </ul>
     </nav>
     <div class="title">
         <h1>眷村</h1>
     </div>
-    <div class="all">        
-        <div class="card">
-            <div class="card-body">
-                <a href="hu">
-                    <img src="img/village/hu.png">
-                </a>                
-                <h5 class="card-title">眷村胡椒蔥餅</h5>
-                <a href="hu" class="ywbtn btn btn-primary btn-bottom-right">了解更多</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                <a href="liu">
-                    <img src="img/village/liu.png">
-                </a>                
-                <h5 class="card-title">眷村劉家蔥油餅</h5>
-                <a href="liu" class="ywbtn btn btn-primary btn-bottom-right">了解更多</a>
-            </div>
-        </div> 
-        <div class="card">
-            <div class="card-body">
-                <a href="luwai">
-                    <img src="img/village/luwai.png">
-                </a>                
-                <h5 class="card-title">眷村滷味</h5>
-                <a href="luwai" class="ywbtn btn btn-primary btn-bottom-right">了解更多</a>
-            </div>
-        </div> 
-        <div class="card">
-            <div class="card-body">
-                <a href="manto">
-                    <img src="img/village/manto.png">
-                </a>                
-                <h5 class="card-title">眷村山東饅頭</h5>
-                <a href="manto" class="ywbtn btn btn-primary btn-bottom-right">了解更多</a>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                <a href="bacon">
-                    <img src="img/village/bacon.png">
-                </a>                
-                <h5 class="card-title">眷村臘肉</h5>
-                <a href="bacon" class="ywbtn btn btn btn-primary btn-bottom-right">了解更多</a>
-            </div>
-        </div> 
-        <div class="card">
-            <div class="card-body">
-                <a href="wang">
-                    <img src="img/village/wang.png">
-                </a>                
-                <h5 class="card-title">眷村王家乾麵</h5>
-                <a href="wang" class="ywbtn btn btn-primary btn-bottom-right">了解更多</a>
-            </div>
-        </div>                  
-    </div>
+    <div id="village" class="all"></div>
     <footer>
-        <img src="img/LOGO.jpg" class="logo_foot">
+        <img src="img/ci.png" class="logo_foot">
         <div class="oot1">
             <h3>忠貞社區地方協會</h3>
             <p>營業時間<br>星期一至星期五 8am~10pm</p>
@@ -138,9 +82,37 @@
         </div>
         <div class="oot2">
             <p>聯絡電話<br>(03)4658200</p>
+            <a href="https://www.facebook.com/groups/2529645990457962/?locale=zh_TW"><img src="/icon/fb.png"
+                    class="fot_icon"></a>
+            <a href="https://www.instagram.com/zhongzhen_community/"><img src="/icon/ig.png" class="fot_icon"></a>
+            <a href="https://www.youtube.com/@zcdasuperpower"><img src="/icon/yt.png" class="fot_icon"></a>
+            <a href="https://novapanshandpan.com"><img src="/icon/nova.png" class="fot_icon"></a>
         </div>
 
     </footer>
+
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+        <script src="vendor/bootstrap/js/popper.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script src="vendor/select2/select2.min.js"></script>
+        <script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+        <script src="js/main.js"></script>
+        <script type="text/javascript" src="./javascripts/header.js"></script>
+        <script type="text/javascript" src="./javascripts/village.js"></script>
+        <script type="text/javascript" src="./javascripts/village-in.js"></script>
+        <script>
+            function initArticle(data) {
+        var content = `
+        
+        <p>${data.content}</p>`;
+        $('#a_village').append(content);
+    }
+    initArticle(res.data);
+    getArticleById();
+        
+    
+        </script>
 </body>
 
 </html>

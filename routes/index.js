@@ -12,7 +12,13 @@ const fs = require('fs');
 const bcrypt = require("bcrypt");
 
 const articleModel = require('../model/article');
-
+const newsModel = require('../model/news');
+const cloudModel = require('../model/cloud');
+const villageModel = require('../model/village');
+const newpeopleModel = require('../model/newpeople');
+const muslinModel = require('../model/muslin');
+const marketModel = require('../model/market');
+const buyModel = require('../model/buy');
 
 const {
 	parse
@@ -127,21 +133,22 @@ router.post('/upload', upload.single("file"), function (req, res, next) {
 		var _article = new articleModel({
 			photos: req.file.filename
 		});
-	
+
 		//data.photos.push(req.file.filename)
 
-		_article.save(function (err, data) {
-			if (err) {
-				res.json({ "status": 1, "msg": "error" });
-			}
-			else {
-				res.json({
-					"status": 0, "msg": "success",
-					"photos": data.photos
-				});
-			}
-		});
+		// _article.save(function (err, data) {
+		// 	if (err) {
+		// 		res.json({ "status": 1, "msg": "error" });
+		// 	}
+		// 	else {
+		// 		res.json({
+		// 			"status": 0, "msg": "success",
+		// 			"photos": data.photos
+		// 		});
+		// 	}
+		// });
 
+		
 	
 	
 });
@@ -162,7 +169,9 @@ router.post('/lostupdate', function (req, res) {
 		title: req.body.title,
 		content: req.body.content,
 		postdate: new Date(),
-		ipth: req.body.ipth
+		ipth: req.body.ipth,
+		aaa: req.body.aaa,
+		yt: req.body.yt
 		//photos: req.file.filename
 	});
 	
@@ -175,6 +184,7 @@ router.post('/lostupdate', function (req, res) {
 		}
 	});
 });
+
 
 router.get('/getArticle', function (req, res) {
 	// var type = (req.query.type != undefined) ?
@@ -217,9 +227,9 @@ router.get('/getArticleById', function (req, res) {
 								// comment: data[0].comment,
 								postdate: data[0].postdate,
 								photos: data[0].photos,
-								ipth: data[0].ipth
-
-
+								ipth: data[0].ipth,
+								aaa: data[0].aaa,
+								yt: data[0].yt
 							}
 						});
 					});
@@ -227,11 +237,696 @@ router.get('/getArticleById', function (req, res) {
 		}
 	});
 });
+// -------------------------------news-------------------------------------------------
+router.post('/upload', upload.single("file"), function (req, res, next) {
+	
+	console.log('----1111------')
+	console.log(req.file)
 
+		var _news = new newsModel({
+			photos: req.file.filename
+		});
 
+		_news.save(function (err, data) {
+			if (err) {
+				res.json({ "status": 1, "msg": "error" });
+			}
+			else {
+				res.json({
+					"status": 0, "msg": "success",
+					"photos": data.photos
+				});
+			}
+		});
 
+	
+	
+});
+router.post('/newsupdate', function (req, res) {
+	console.log('----222------')
+console.log(req.body)
+var newnews = new newsModel({
+	title: req.body.title,
+	content: req.body.content,
+	postdate: new Date(),
+	ipth: req.body.ipth,
+	aaa: req.body.aaa
+	//photos: req.file.filename
+});
 
+newnews.save(function (err, data) {
+	if (err) {
+		res.json({ "status": 1, "msg": "error" });
+	}
+	else {
+		res.json({ "status": 0, "msg": "success", "data": data });
+	}
+});
+});
 
+router.get('/getnews', function (req, res) {
+// var type = (req.query.type != undefined) ?
+//             req.query.type : "";
+// var account = (req.query.account != undefined) ?
+//               req.query.account : "";
+var title = (req.query.title != undefined) ?
+	req.query.title : "";
+newsModel.find({
+	// "account": account != "" ? account :
+	//           { $regex: '.*' + account + '.*' },
+	// "type": {$regex: '.*' + type + '.*' },
+	"title": { $regex: '.*' + title + '.*' }
+}, function (err, data) {
+	if (err) {
+		console.log(err);
+	}
+	res.json({ "data": data });
+});
+});
+router.get('/getnewsById', function (req, res) {
+newsModel.find({ _id: req.query._id }, function (err, data) {
+	if (data == undefined) {
+		res.json({ "status": 1, "msg": "查無文章" });
+	}
+	else {
+		if (err) {
+			res.json({ "status": 1, "msg": "error" });
+		}
+		else {
+			memberModel.find({ id: data[0].id },
+				function (err, mem) {
+					res.json({
+						"status": 0, "msg": "success", "data": {
+							// account: data[0].account,
+							// type: data[0].type,
+							title: data[0].title,
+							content: data[0].content,
+							// like: data[0].like,
+							// comment: data[0].comment,
+							postdate: data[0].postdate,
+							photos: data[0].photos,
+							ipth: data[0].ipth,
+							aaa: data[0].aaa
+
+						}
+					});
+				});
+		}
+	}
+});
+});
+//-------------------cloud-----------------------------
+router.post('/upload', upload.single("file"), function (req, res, next) {
+	
+	console.log('----1111------')
+	console.log(req.file)
+
+		var _cloud = new cloudModel({
+			photos: req.file.filename
+		});
+
+		_cloud.save(function (err, data) {
+			if (err) {
+				res.json({ "status": 1, "msg": "error" });
+			}
+			else {
+				res.json({
+					"status": 0, "msg": "success",
+					"photos": data.photos
+				});
+			}
+		});
+
+	
+	
+});
+router.post('/cloudupdate', function (req, res) {
+	console.log('----222------')
+console.log(req.body)
+var newcloud = new cloudModel({
+	title: req.body.title,
+	content: req.body.content,
+	postdate: new Date(),
+	ipth: req.body.ipth,
+	aaa: req.body.aaa
+	//photos: req.file.filename
+});
+
+newcloud.save(function (err, data) {
+	if (err) {
+		res.json({ "status": 1, "msg": "error" });
+	}
+	else {
+		res.json({ "status": 0, "msg": "success", "data": data });
+	}
+});
+});
+
+router.get('/getcloud', function (req, res) {
+// var type = (req.query.type != undefined) ?
+//             req.query.type : "";
+// var account = (req.query.account != undefined) ?
+//               req.query.account : "";
+var title = (req.query.title != undefined) ?
+	req.query.title : "";
+cloudModel.find({
+	// "account": account != "" ? account :
+	//           { $regex: '.*' + account + '.*' },
+	// "type": {$regex: '.*' + type + '.*' },
+	"title": { $regex: '.*' + title + '.*' }
+}, function (err, data) {
+	if (err) {
+		console.log(err);
+	}
+	res.json({ "data": data });
+});
+});
+router.get('/getcloudById', function (req, res) {
+cloudModel.find({ _id: req.query._id }, function (err, data) {
+	if (data == undefined) {
+		res.json({ "status": 1, "msg": "查無文章" });
+	}
+	else {
+		if (err) {
+			res.json({ "status": 1, "msg": "error" });
+		}
+		else {
+			memberModel.find({ id: data[0].id },
+				function (err, mem) {
+					res.json({
+						"status": 0, "msg": "success", "data": {
+							// account: data[0].account,
+							// type: data[0].type,
+							title: data[0].title,
+							content: data[0].content,
+							// like: data[0].like,
+							// comment: data[0].comment,
+							postdate: data[0].postdate,
+							photos: data[0].photos,
+							ipth: data[0].ipth,
+							aaa: data[0].aaa
+
+						}
+					});
+				});
+		}
+	}
+});
+});
+//-----------village---------
+router.post('/upload', upload.single("file"), function (req, res, next) {
+	
+	console.log('----1111------')
+	console.log(req.file)
+
+		var _village = new villageModel({
+			photos: req.file.filename
+		});
+
+		_village.save(function (err, data) {
+			if (err) {
+				res.json({ "status": 1, "msg": "error" });
+			}
+			else {
+				res.json({
+					"status": 0, "msg": "success",
+					"photos": data.photos
+				});
+			}
+		});
+
+	
+	
+});
+router.post('/villageupdate', function (req, res) {
+	console.log('----222------')
+console.log(req.body)
+var newvillage = new villageModel({
+	title: req.body.title,
+	content: req.body.content,
+	postdate: new Date(),
+	ipth: req.body.ipth,
+	aaa: req.body.aaa
+	//photos: req.file.filename
+});
+
+newvillage.save(function (err, data) {
+	if (err) {
+		res.json({ "status": 1, "msg": "error" });
+	}
+	else {
+		res.json({ "status": 0, "msg": "success", "data": data });
+	}
+});
+});
+
+router.get('/getvillage', function (req, res) {
+// var type = (req.query.type != undefined) ?
+//             req.query.type : "";
+// var account = (req.query.account != undefined) ?
+//               req.query.account : "";
+var title = (req.query.title != undefined) ?
+	req.query.title : "";
+villageModel.find({
+	// "account": account != "" ? account :
+	//           { $regex: '.*' + account + '.*' },
+	// "type": {$regex: '.*' + type + '.*' },
+	"title": { $regex: '.*' + title + '.*' }
+}, function (err, data) {
+	if (err) {
+		console.log(err);
+	}
+	res.json({ "data": data });
+});
+});
+router.get('/getvillageById', function (req, res) {
+villageModel.find({ _id: req.query._id }, function (err, data) {
+	if (data == undefined) {
+		res.json({ "status": 1, "msg": "查無文章" });
+	}
+	else {
+		if (err) {
+			res.json({ "status": 1, "msg": "error" });
+		}
+		else {
+			memberModel.find({ id: data[0].id },
+				function (err, mem) {
+					res.json({
+						"status": 0, "msg": "success", "data": {
+							// account: data[0].account,
+							// type: data[0].type,
+							title: data[0].title,
+							content: data[0].content,
+							// like: data[0].like,
+							// comment: data[0].comment,
+							postdate: data[0].postdate,
+							photos: data[0].photos,
+							ipth: data[0].ipth,
+							aaa: data[0].aaa
+
+						}
+					});
+				});
+		}
+	}
+});
+});
+//-----------------newpeople---------------
+router.post('/upload', upload.single("file"), function (req, res, next) {
+	
+	console.log('----1111------')
+	console.log(req.file)
+
+		var _newpeople = new newpeopleModel({
+			photos: req.file.filename
+		});
+
+		_newpeople.save(function (err, data) {
+			if (err) {
+				res.json({ "status": 1, "msg": "error" });
+			}
+			else {
+				res.json({
+					"status": 0, "msg": "success",
+					"photos": data.photos
+				});
+			}
+		});
+
+	
+	
+});
+router.post('/newpeopleupdate', function (req, res) {
+	console.log('----222------')
+console.log(req.body)
+var newnewpeople = new newpeopleModel({
+	title: req.body.title,
+	content: req.body.content,
+	postdate: new Date(),
+	ipth: req.body.ipth,
+	aaa: req.body.aaa
+	//photos: req.file.filename
+});
+
+newnewpeople.save(function (err, data) {
+	if (err) {
+		res.json({ "status": 1, "msg": "error" });
+	}
+	else {
+		res.json({ "status": 0, "msg": "success", "data": data });
+	}
+});
+});
+
+router.get('/getnewpeople', function (req, res) {
+// var type = (req.query.type != undefined) ?
+//             req.query.type : "";
+// var account = (req.query.account != undefined) ?
+//               req.query.account : "";
+var title = (req.query.title != undefined) ?
+	req.query.title : "";
+newpeopleModel.find({
+	// "account": account != "" ? account :
+	//           { $regex: '.*' + account + '.*' },
+	// "type": {$regex: '.*' + type + '.*' },
+	"title": { $regex: '.*' + title + '.*' }
+}, function (err, data) {
+	if (err) {
+		console.log(err);
+	}
+	res.json({ "data": data });
+});
+});
+router.get('/getnewpeopleById', function (req, res) {
+newpeopleModel.find({ _id: req.query._id }, function (err, data) {
+	if (data == undefined) {
+		res.json({ "status": 1, "msg": "查無文章" });
+	}
+	else {
+		if (err) {
+			res.json({ "status": 1, "msg": "error" });
+		}
+		else {
+			memberModel.find({ id: data[0].id },
+				function (err, mem) {
+					res.json({
+						"status": 0, "msg": "success", "data": {
+							// account: data[0].account,
+							// type: data[0].type,
+							title: data[0].title,
+							content: data[0].content,
+							// like: data[0].like,
+							// comment: data[0].comment,
+							postdate: data[0].postdate,
+							photos: data[0].photos,
+							ipth: data[0].ipth,
+							aaa: data[0].aaa
+
+						}
+					});
+				});
+		}
+	}
+});
+});
+//-------------------------muslin-----------------------
+router.post('/upload', upload.single("file"), function (req, res, next) {
+	
+	console.log('----1111------')
+	console.log(req.file)
+
+		var _muslin = new muslinModel({
+			photos: req.file.filename
+		});
+
+		_muslin.save(function (err, data) {
+			if (err) {
+				res.json({ "status": 1, "msg": "error" });
+			}
+			else {
+				res.json({
+					"status": 0, "msg": "success",
+					"photos": data.photos
+				});
+			}
+		});
+
+	
+	
+});
+router.post('/muslinupdate', function (req, res) {
+	console.log('----222------')
+console.log(req.body)
+var newmuslin = new muslinModel({
+	title: req.body.title,
+	content: req.body.content,
+	postdate: new Date(),
+	ipth: req.body.ipth,
+	aaa: req.body.aaa
+	//photos: req.file.filename
+});
+
+newmuslin.save(function (err, data) {
+	if (err) {
+		res.json({ "status": 1, "msg": "error" });
+	}
+	else {
+		res.json({ "status": 0, "msg": "success", "data": data });
+	}
+});
+});
+
+router.get('/getmuslin', function (req, res) {
+// var type = (req.query.type != undefined) ?
+//             req.query.type : "";
+// var account = (req.query.account != undefined) ?
+//               req.query.account : "";
+var title = (req.query.title != undefined) ?
+	req.query.title : "";
+muslinModel.find({
+	// "account": account != "" ? account :
+	//           { $regex: '.*' + account + '.*' },
+	// "type": {$regex: '.*' + type + '.*' },
+	"title": { $regex: '.*' + title + '.*' }
+}, function (err, data) {
+	if (err) {
+		console.log(err);
+	}
+	res.json({ "data": data });
+});
+});
+router.get('/getmuslinById', function (req, res) {
+muslinModel.find({ _id: req.query._id }, function (err, data) {
+	if (data == undefined) {
+		res.json({ "status": 1, "msg": "查無文章" });
+	}
+	else {
+		if (err) {
+			res.json({ "status": 1, "msg": "error" });
+		}
+		else {
+			memberModel.find({ id: data[0].id },
+				function (err, mem) {
+					res.json({
+						"status": 0, "msg": "success", "data": {
+							// account: data[0].account,
+							// type: data[0].type,
+							title: data[0].title,
+							content: data[0].content,
+							// like: data[0].like,
+							// comment: data[0].comment,
+							postdate: data[0].postdate,
+							photos: data[0].photos,
+							ipth: data[0].ipth,
+							aaa: data[0].aaa
+
+						}
+					});
+				});
+		}
+	}
+});
+});
+//-----------------market---------------------
+router.post('/upload', upload.single("file"), function (req, res, next) {
+	
+	console.log('----1111------')
+	console.log(req.file)
+
+		var _market = new marketModel({
+			photos: req.file.filename
+		});
+
+		_market.save(function (err, data) {
+			if (err) {
+				res.json({ "status": 1, "msg": "error" });
+			}
+			else {
+				res.json({
+					"status": 0, "msg": "success",
+					"photos": data.photos
+				});
+			}
+		});
+
+	
+	
+});
+router.post('/marketupdate', function (req, res) {
+	console.log('----222------')
+console.log(req.body)
+var newmarket = new marketModel({
+	title: req.body.title,
+	content: req.body.content,
+	postdate: new Date(),
+	ipth: req.body.ipth,
+	aaa: req.body.aaa
+	//photos: req.file.filename
+});
+
+newmarket.save(function (err, data) {
+	if (err) {
+		res.json({ "status": 1, "msg": "error" });
+	}
+	else {
+		res.json({ "status": 0, "msg": "success", "data": data });
+	}
+});
+});
+
+router.get('/getmarket', function (req, res) {
+// var type = (req.query.type != undefined) ?
+//             req.query.type : "";
+// var account = (req.query.account != undefined) ?
+//               req.query.account : "";
+var title = (req.query.title != undefined) ?
+	req.query.title : "";
+marketModel.find({
+	// "account": account != "" ? account :
+	//           { $regex: '.*' + account + '.*' },
+	// "type": {$regex: '.*' + type + '.*' },
+	"title": { $regex: '.*' + title + '.*' }
+}, function (err, data) {
+	if (err) {
+		console.log(err);
+	}
+	res.json({ "data": data });
+});
+});
+router.get('/getmarketById', function (req, res) {
+marketModel.find({ _id: req.query._id }, function (err, data) {
+	if (data == undefined) {
+		res.json({ "status": 1, "msg": "查無文章" });
+	}
+	else {
+		if (err) {
+			res.json({ "status": 1, "msg": "error" });
+		}
+		else {
+			memberModel.find({ id: data[0].id },
+				function (err, mem) {
+					res.json({
+						"status": 0, "msg": "success", "data": {
+							// account: data[0].account,
+							// type: data[0].type,
+							title: data[0].title,
+							content: data[0].content,
+							// like: data[0].like,
+							// comment: data[0].comment,
+							postdate: data[0].postdate,
+							photos: data[0].photos,
+							ipth: data[0].ipth,
+							aaa: data[0].aaa
+
+						}
+					});
+				});
+		}
+	}
+});
+});
+//--------------buy-------------
+router.post('/upload', upload.single("file"), function (req, res, next) {
+	
+	console.log('----1111------')
+	console.log(req.file)
+
+		var _buy = new buyModel({
+			photos: req.file.filename
+		});
+
+		_buy.save(function (err, data) {
+			if (err) {
+				res.json({ "status": 1, "msg": "error" });
+			}
+			else {
+				res.json({
+					"status": 0, "msg": "success",
+					"photos": data.photos
+				});
+			}
+		});
+
+	
+	
+});
+router.post('/buyupdate', function (req, res) {
+	console.log('----222------')
+console.log(req.body)
+var newbuy = new buyModel({
+	title: req.body.title,
+	content: req.body.content,
+	postdate: new Date(),
+	ipth: req.body.ipth,
+	aaa: req.body.aaa,
+	price: req.body.price
+	//photos: req.file.filename
+});
+
+newbuy.save(function (err, data) {
+	if (err) {
+		res.json({ "status": 1, "msg": "error" });
+	}
+	else {
+		res.json({ "status": 0, "msg": "success", "data": data });
+	}
+});
+});
+
+router.get('/getbuy', function (req, res) {
+// var type = (req.query.type != undefined) ?
+//             req.query.type : "";
+// var account = (req.query.account != undefined) ?
+//               req.query.account : "";
+var title = (req.query.title != undefined) ?
+	req.query.title : "";
+buyModel.find({
+	// "account": account != "" ? account :
+	//           { $regex: '.*' + account + '.*' },
+	// "type": {$regex: '.*' + type + '.*' },
+	"title": { $regex: '.*' + title + '.*' }
+}, function (err, data) {
+	if (err) {
+		console.log(err);
+	}
+	res.json({ "data": data });
+});
+});
+router.get('/getbuyById', function (req, res) {
+buyModel.find({ _id: req.query._id }, function (err, data) {
+	if (data == undefined) {
+		res.json({ "status": 1, "msg": "查無文章" });
+	}
+	else {
+		if (err) {
+			res.json({ "status": 1, "msg": "error" });
+		}
+		else {
+			memberModel.find({ id: data[0].id },
+				function (err, mem) {
+					res.json({
+						"status": 0, "msg": "success", "data": {
+							// account: data[0].account,
+							// type: data[0].type,
+							title: data[0].title,
+							content: data[0].content,
+							// like: data[0].like,
+							// comment: data[0].comment,
+							postdate: data[0].postdate,
+							photos: data[0].photos,
+							ipth: data[0].ipth,
+							aaa: data[0].aaa,
+							price: data[0].price
+
+						}
+					});
+				});
+		}
+	}
+});
+});
+
+//-------------------------------------------------------------------------------------
 const isAuth = (req, res, next) => {
 	if (!req.session.isAuth) return res.redirect("login");
 	next();
@@ -293,7 +988,7 @@ router.get('/chicken', (req, res) => {
 router.get('/child', (req, res) => {
 	res.render("child");
 	console.log("成功");
-});
+}); 
 router.get('/chin', (req, res) => {
 	res.render("chin");
 	console.log("成功");
@@ -488,6 +1183,62 @@ router.get('/buyteach', (req, res) => {
 });
 router.get('/cont', (req, res) => {
 	res.render("cont");
+	console.log("成功");
+});
+router.get('/newsupdate', isAuth, (req, res) => {
+	res.render("newsupdate");
+	console.log("成功");
+});
+router.get('/news-in', (req, res) => {
+	res.render("news-in");
+	console.log("成功");
+});
+router.get('/cloudupdate', isAuth, (req, res) => {
+	res.render("cloudupdate");
+	console.log("成功");
+});
+router.get('/cloud-in', (req, res) => {
+	res.render("cloud-in");
+	console.log("成功");
+});
+router.get('/villageupdate', isAuth, (req, res) => {
+	res.render("villageupdate");
+	console.log("成功");
+});
+router.get('/village-in', (req, res) => {
+	res.render("village-in");
+	console.log("成功");
+});
+router.get('/newpeopleupdate', isAuth, (req, res) => {
+	res.render("newpeopleupdate");
+	console.log("成功");
+});
+router.get('/newpeople-in', (req, res) => {
+	res.render("newpeople-in");
+	console.log("成功");
+});
+router.get('/muslinupdate', isAuth, (req, res) => {
+	res.render("muslinupdate");
+	console.log("成功");
+});
+router.get('/muslin-in', (req, res) => {
+	res.render("muslin-in");
+	console.log("成功");
+});
+router.get('/marketupdate', isAuth, (req, res) => {
+	res.render("marketupdate");
+	console.log("成功");
+});
+router.get('/market-in', (req, res) => {
+	res.render("market-in");
+	console.log("成功");
+});
+router.get('/buyupdate', isAuth, (req, res) => {
+	res.render("buyupdate");
+	console.log("成功");
+});
+router.get('/buy-in', (req, res) => {
+	res.render("buy-in");
 	console.log("成功");
 });
 

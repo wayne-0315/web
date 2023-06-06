@@ -7,13 +7,20 @@ function initArticle(data) {
     <div class="title">
         <h1>${data.title}</h1>
     </div>
-   
-   <div class="why">
+    <div class="why">
         <div class="image-container">
         <div class="image-wrapper">            
             <p class="image-caption">
-                ${data.content}</p>
-                <img class="" src="../photos/${data.ipth}">
+                ${data.content}
+                <br>
+                <a href="${data.aaa}"
+                    target="_blank" class="link">
+                    ${data.aaa}</a>
+                </p>
+            <img class="threetwo"src="../photos/${data.ipth}">
+            <div class="vid">${data.yt}
+                
+            </div>
         </div>           
         </div>        
     </div>

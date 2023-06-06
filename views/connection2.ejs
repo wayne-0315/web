@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <title>忠貞聯絡</title>
+    <style>
+        /* 上標題加上連結的設定 */
+
+body {
+    margin: 0;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: sticky;
+    top:0;
+    z-index: 1;
+    background-color: #ffffff;
+}
+
+
+
+.center {
+    display: flex;
+    align-items: center;
+}
+
+#title {
+    font-size: 40px;
+    padding-left: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: end;
+    gap: 15px;
+    padding-right: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: azure;
+    font-size: 30px;
+}
+
+a:hover {
+    color:black;
+}
+
+.control{
+    border: 0;
+    border-radius: 8px;
+    outline: none;
+    width: 30%;
+    height: 56px;
+    padding: 0 16px;
+    background:#617B3F;
+    color:#5a4f79;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    transition: 0.4s;
+}
+
+.controlv2{
+    border: 0;
+    border-radius: 8px;
+    outline: none;
+    width: 100%;
+    height: 56px;
+    padding: 0 16px;
+    background:white;
+    color:#5a4f79;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    transition: 0.4s;
+}
+
+.button{
+    background:transparent;
+    cursor :pointer;
+    border: 0;
+}
+
+/* 下拉按钮样式 */
+.dropbtn {
+    background-color: #ffffff;
+    color: #5C5F62;
+    padding: 25px;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+}
+
+/* 容器 <div> - 需要定位下拉内容 */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 2;
+}
+
+/* 下拉内容 (默认隐藏) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+/* 下拉菜单的链接 */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* 鼠标移上去后修改下拉菜单链接颜色 */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* 在鼠标移上去后显示下拉菜单 */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* 当下拉内容显示后修改下拉按钮的背景颜色 */
+.dropdown:hover .dropbtn {
+    background-color: #617B3F;
+    color: #ffffff;
+}
+
+.btn {
+    border:0;
+    background-color:#617B3F;
+    color:#fff;
+    border-radius:6px;
+    cursor:pointer;
+    padding: 10px;
+    font-size: 20px;
+    margin-right: 60px;
+}
+
+.btn:hover {
+    color:#5C5F62;
+    background-color:#fff;
+    border:3px #5C5F62 solid;
+}
+
+.vid {
+    width: 100%;
+}
+
+.fot {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.lg {
+    margin-left: 60px;
+}
+
+
+.oot1 {
+    margin-right: 150px;
+}
+.oot2 {
+    margin-right: 150px;
+}
+
+
+
+.v-line1{
+    border-left: 1px solid #000;
+    height: 75px;
+    left: 55.5%;
+    position: absolute;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+.v-line2{
+    border-left: 1px solid #000;
+    height: 75px;
+    left: 75.5%;
+    position: absolute;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+.int {
+    display: flex;
+    justify-content: center;
+}
+
+.inb {
+    display: flex;
+    justify-content: center;
+}
+
+.mar1 {
+    margin-bottom: 80px;
+}
+
+.mar2 {
+    margin-bottom: 150px;
+}
+
+.ff {
+    margin-right: 200px;
+}
+/* 以上是共用區域 */
+
+    </style>
+</head>
+<body>
+    <!-- 上方專欄 !-->
+    <div class="navbar" style="justify-content: space-between;">
+        <div class="left center" >
+            <a href="index"><img src="../img/111.png" alt="" width="100" height="100" class="lg"></a>
+        </div>
+        <div class="mid center" >
+            <div class="dropdown">
+                <button class="dropbtn">新</button>
+                <div class="dropdown-content">
+                  <a href="#">即時新聞</a>
+                </div>
+              </div>
+      
+              <div class="dropdown">
+                  <button class="dropbtn">饞</button>
+                  <div class="dropdown-content">
+                    <a href="#">雲南</a>
+                    <a href="#">眷村</a>
+                    <a href="#">新住民</a>
+                    <a href="#">穆斯林</a>
+                  </div>
+              </div>
+      
+              <div class="dropdown">
+                  <button class="dropbtn">夢</button>
+                  <div class="dropdown-content">
+                      <a href="#">手碟</a>
+                  </div>
+              </div>
+      
+                <div class="dropdown">
+                  <button class="dropbtn">地</button>
+                  <div class="dropdown-content">
+                    <a href="#">景點</a>
+                    <a href="#">忠貞創生</a>
+                  </div>
+              </div>
+      
+              <div class="dropdown">
+                  <button class="dropbtn">購</button>
+                  <div class="dropdown-content">
+                    <a href="#">美食代購</a>
+                  </div>
+              </div>
+        </div>
+        <div class="right center" >
+            <a href="#">
+                <button class="btn">
+                聯絡我們
+                </button>
+            </a>
+        </div>
+        
+    </div>
+
+    <!-- 間隔 <div class="margin"></div> !-->
+
+    
+
+    <!-- 內容 !-->
+    <div class="mar1"></div>
+    <div class="int">
+        <div class="oot1">
+            <h1>忠貞社區地方協會</h1>
+            <h3>營業時間<br>星期一至星期五 8am~10pm</h3>
+            <h3>地址<br>桃園市平鎮區中山路63號</h3>            
+            <h3>電子信箱<br>zcda10901@gmail.com</h3>
+        </div>
+        
+        <div class="oot2">
+            <br>
+            <br>
+            <br>
+            <br>
+            <h3>聯絡電話<br>(03)4658200</h3>
+        </div>
+        
+        <div>
+            <img src="../img/111.png" alt="" width="300" height="300" class="foot">
+        </div>
+    </div>
+    <div class="mar2"></div>
+    <div class="inb">
+        <div class="ff">
+            <form action="/formprocess.php" method="post">
+
+                <p>Name：</p>
+                <p><input type="text" name="name" placeholder="你的名字"></p>
+            
+                <p>Email：</p>
+                <p><input name="species" type="text"></p>
+            
+                <p>Comments：</p>
+                <p><textarea name="comments" rows="5" cols="20" placeholder="Message"></textarea></p>
+
+                <button class="btn" type="submit">Submit</button>
+            
+            </form>
+        </div>
+        <div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.1138995931497!2d121.25161867643601!3d24.928189477885276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34682287773d99ed%3A0xcb0cf06b460fa223!2zMzI05qGD5ZyS5biC5bmz6Y6u5Y2A5Lit5bGx6LevNjPomZ8!5e0!3m2!1szh-TW!2stw!4v1682259846412!5m2!1szh-TW!2stw" width="500" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+    
+
+
+    <footer class="fot" style="display: flex; justify-content: center;">
+        
+        
+        
+    </footer>
+</body>
+</html>

@@ -11,8 +11,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="css/navfot.css">
     <link rel="stylesheet" href="css/card.css">
-    <link rel="stylesheet" href="css/connection.css">
     <link rel="stylesheet" href="css/paragraph.css">
+    <link rel="stylesheet" href="css/backbtn.js">
+    <link rel="stylesheet" href="css/backbtn.css">
+    <link rel="stylesheet" href="css/connection.css">
     <title>忠貞聯絡</title>
 
 </head>
@@ -21,7 +23,7 @@
     <!-- 上方專欄 !-->
     <nav>
         <ul>
-            <a href="index"><img src="img/LOGO.jpg" class="logo_top"></a>
+            <a href="index"><img src="img/logo.png" class="logo_top"></a>
             <li class="dropdown">
                 <a href="#" class="green-pad">報</a>
                 <ul class="dropdown-menu">
@@ -63,40 +65,30 @@
                     <li><a href="create" class="dimand_1">忠貞創生</a></li>
                 </ul>
             </li>
-
-            <button class="conbtn">
-                <a href="connection" class="btna">找我</a>
-            </button>
+            <a href="connection" class="btna">
+                <button class="conbtn">找我 </button>
+            </a>
         </ul>
     </nav>
 
-    <div class="map">
-        <div class="abc">
-            <div class="box">
-                <img src="../icon/nova.png" alt="" class="con">
-                <a href="https://novapanshandpan.com " class="conlink">合作夥伴-諾瓦手碟</a>
-            </div>
-            <div class="box">
-                <img src="../icon/fb.png" alt="" class="con">
-                <a href="https://www.facebook.com/groups/2529645990457962/?locale=zh_TW" class="conlink">忠貞社團</a>
-            </div>
-            <div class="box">
-                <img src="../icon/yt.png" alt="" class="con">
-                <a href="https://www.youtube.com/@zcdasuperpower" class="conlink">Sophie Liao</a>
-            </div>
-            <div class="box">
-                <img src="../icon/ig.png" alt="" class="con">
-                <a href="https://www.instagram.com/zhongzhen_community/" class="conlink">少年的超能力 X 忠貞社區</a>
-            </div>
+    <div class="inb">
+        <form action="/formprocess.php" method="post">
+            <label for="name">你的名字</label>
+            <p><input type="text" name="name"></p>
+            <br>
+            <label for="species">信箱</label>
+            <p><input name="species" type="text"></p>
+            <br>
+            <label for="comments">意見</label>
+            <p><textarea name="comments" rows="5" cols="20"></textarea></p>
 
-        </div>
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.1138995931497!2d121.25161867643601!3d24.928189477885276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34682287773d99ed%3A0xcb0cf06b460fa223!2zMzI05qGD5ZyS5biC5bmz6Y6u5Y2A5Lit5bGx6LevNjPomZ8!5e0!3m2!1szh-TW!2stw!4v1682259846412!5m2!1szh-TW!2stw"
-            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <button class="submit" type="submit">Submit</button>
+
+        </form>
     </div>
 
     <footer>
-        <img src="img/LOGO.jpg" class="logo_foot">
+        <img src="img/ci.png" class="logo_foot">
         <div class="oot1">
             <h3>忠貞社區地方協會</h3>
             <p>營業時間<br>星期一至星期五 8am~10pm</p>
@@ -108,6 +100,11 @@
         </div>
         <div class="oot2">
             <p>聯絡電話<br>(03)4658200</p>
+            <a href="https://www.facebook.com/groups/2529645990457962/?locale=zh_TW"><img src="/icon/fb.png"
+                    class="fot_icon"></a>
+            <a href="https://www.instagram.com/zhongzhen_community/"><img src="/icon/ig.png" class="fot_icon"></a>
+            <a href="https://www.youtube.com/@zcdasuperpower"><img src="/icon/yt.png" class="fot_icon"></a>
+            <a href="https://novapanshandpan.com"><img src="/icon/nova.png" class="fot_icon"></a>
         </div>
 
     </footer>

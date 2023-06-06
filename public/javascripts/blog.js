@@ -1,21 +1,21 @@
 function newArticle (data) {
-var content = document. createElement ('tr');
-content.className = "row100 body";
+var content = document. createElement ('div');
+content.className = "card";
 var dat = new Date (data. postdate);
 var crt_date = (dat.getMonth () + 1) + '/' + dat.getDate () + '  ' + (dat .getHours() < 10 ? '0' + dat.getHours() : dat .getHours()) + ':' + (dat .getMinutes() < 10 ? '0' + dat.getMinutes() : dat.getMinutes()) ;
 var addHtml = 
 `
-<div class="all">
-        <div class="card">
+
+        
             <div class="card-body">
                 <a href="/cont?_id=${data._id}">
                 <img class="" src="../photos/${data.ipth}">
                 </a>
                 <h5 class="card-title">${data.title}</h5>
-                <a href="/cont?_id=${data._id}" class="greenbtn btn btn-primary btn-bottom-right">了解更多</a>
+                <a href="/cont?_id=${data._id}" class="greenbtn btn btn-bottom-right">了解更多</a>
             </div>
-        </div>
-</div>
+        
+
 `;
 /* <td class="cell100 columnl">
 <a href="/lost?
@@ -35,7 +35,7 @@ ${data.account}</a>
 </ta>
  */
 content.insertAdjacentHTML('beforeend', addHtml);
-$('#article').append(content);
+$('#article1').append(content);
 }
 
 function getUrlVal(val) {

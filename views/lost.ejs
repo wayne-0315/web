@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" type="text/css" href="css/time.css">
     <link rel="stylesheet" type="text/css" href="css/lost.css">
-    <link rel="stylesheet" type="text/css" href="css/top.css">
+    <link rel="stylesheet" type="text/css" href="css/top.css"> -->
     <script type="text/javascript" src="javascripts/members.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet" />
@@ -16,259 +16,9 @@
     <link rel="stylesheet" href="css/navfot.css">
     <link rel="stylesheet" href="css/card.css">
     <link rel="stylesheet" href="css/paragraph.css">
+    <link rel="stylesheet" href="backbtn.js">
+    <link rel="stylesheet" href="css/backbtn.css">
     <title>FILE</title>
-    <style>
-        /* 上標題加上連結的設定 */
-
-        body {
-            margin: 0;
-        }
-
-        .navbar {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            position: sticky;
-            top: 0;
-            z-index: 1;
-            background-color: #ffffff;
-        }
-
-
-
-        .center {
-            display: flex;
-            align-items: center;
-        }
-
-        #title {
-            font-size: 40px;
-            padding-left: 20px;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            color: white;
-        }
-
-        ul {
-            display: flex;
-            list-style-type: none;
-            justify-content: end;
-            gap: 15px;
-            padding-right: 20px;
-        }
-
-        a {
-            text-decoration: none;
-            color: azure;
-            font-size: 30px;
-        }
-
-        a:hover {
-            color: black;
-        }
-
-        .control {
-            border: 0;
-            border-radius: 8px;
-            outline: none;
-            width: 30%;
-            height: 56px;
-            padding: 0 16px;
-            background: #617B3F;
-            color: #5a4f79;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            font-size: 30px;
-            transition: 0.4s;
-        }
-
-        .controlv2 {
-            border: 0;
-            border-radius: 8px;
-            outline: none;
-            width: 100%;
-            height: 56px;
-            padding: 0 16px;
-            background: white;
-            color: #5a4f79;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            font-size: 30px;
-            transition: 0.4s;
-        }
-
-        .button {
-            background: transparent;
-            cursor: pointer;
-            border: 0;
-        }
-
-        /* 下拉按钮样式 */
-        .dropbtn {
-            background-color: #ffffff;
-            color: #5C5F62;
-            padding: 33px;
-            font-size: 30px;
-            border: none;
-            cursor: pointer;
-        }
-
-        /* 容器 <div> - 需要定位下拉内容 */
-        .dropdown {
-            position: relative;
-            display: inline-block;
-            z-index: 2;
-        }
-
-        /* 下拉内容 (默认隐藏) */
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        }
-
-        /* 下拉菜单的链接 */
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        /* 鼠标移上去后修改下拉菜单链接颜色 */
-        .dropdown-content a:hover {
-            background-color: #617B3F;
-            color: #ffffff;
-        }
-
-
-        /* 在鼠标移上去后显示下拉菜单 */
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        /* 当下拉内容显示后修改下拉按钮的背景颜色 */
-        .dropdown:hover .dropbtn {
-            background-color: #617B3F;
-            color: #ffffff;
-        }
-
-        .btn {
-            border: 3px #617B3F solid;
-            background-color: #617B3F;
-            color: #fff;
-            border-radius: 6px;
-            cursor: pointer;
-            padding: 10px;
-            font-size: 20px;
-            margin-right: 60px;
-        }
-
-        .btn:hover {
-            color: #5C5F62;
-            background-color: #fff;
-            border: 3px #5C5F62 solid;
-        }
-
-        .vid {
-            width: 100%;
-        }
-
-        .fot {
-            margin-top: 50px;
-            margin-bottom: 50px;
-        }
-
-        .lg {
-            margin-left: 60px;
-        }
-
-
-        .oot1 {
-            margin-right: 150px;
-        }
-
-
-
-
-
-        .v-line1 {
-            border-left: 1px solid #000;
-            height: 75px;
-            left: 55.5%;
-            position: absolute;
-            margin-top: 40px;
-            margin-bottom: 50px;
-        }
-
-        .v-line2 {
-            border-left: 1px solid #000;
-            height: 75px;
-            left: 75.5%;
-            position: absolute;
-            margin-top: 40px;
-            margin-bottom: 50px;
-        }
-
-        .int {
-            display: flex;
-            justify-content: center;
-        }
-
-        .inb {
-            display: flex;
-            justify-content: center;
-        }
-
-        .mar1 {
-            margin-bottom: 80px;
-        }
-
-        .mar2 {
-            margin-bottom: 150px;
-        }
-
-        .ff {
-            margin-right: 200px;
-        }
-
-        .in:hover .contentin {
-            display: block;
-        }
-
-        .in {
-            display: inline;
-        }
-
-        .contentin {
-            display: none;
-            position: absolute;
-            left: 100%;
-            top: 0;
-            background-color: #f9f9f9;
-            min-width: 250px;
-        }
-
-        .bbtn {
-            border: 3px #ffffff solid;
-            background-color: #ffffff;
-            color: #ffffff;
-            border-radius: 6px;
-            cursor: pointer;
-            padding: 10px;
-            font-size: 15px;
-            margin-left: 60px;
-        }
-
-        .bbtn:hover {
-            border: 3px #000000 solid;
-            color: #000000;
-            background-color: #fff;
-            border: 3px #000000 solid;
-        }
-
-        /* 以上是共用區域 */
-    </style>
 </head>
 
 <body>
@@ -319,26 +69,23 @@
                 </ul>
             </li>
         
-            <button class="conbtn">
-                <a href="connection" class="btna">找我</a>
-            </button>
+            <a href="connection" class="btna">
+                <button class="conbtn">找我 </button>
+            </a>
         </ul>
     </nav>
     <!-- 遺失物 -->
     
     
-
-    
-   
-   <div class="all">
     
         <!-- <table>
         <tbody id="article">
         </tbody> 
         </table> -->
-        <div id="article"></div>
-               
-    </div>
+        <div id="article1" class="all"></div>
+              
+        
+        
     
     <!-- <div class="flex-container" style="display: flex; justify-content: center;">
         <div id="overlay" style="display: none;"></div>
