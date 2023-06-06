@@ -1658,6 +1658,14 @@ router.get('/createupdate', (req, res) => {
 	res.render("createupdate");
 	console.log("成功");
 });
+router.get('/yang', (req, res) => {
+	res.render("yang");
+	console.log("成功");
+});
+router.get('/Book', (req, res) => {
+	res.render("Book");
+	console.log("成功");
+});
 
 
 // router.post("/login", async (req, res) => {
