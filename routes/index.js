@@ -265,7 +265,7 @@ router.post('/upload', upload.single("file"), function (req, res, next) {
 
 	
 	
-// });
+});
 router.post('/newsupdate', function (req, res) {
 	console.log('----222------')
 console.log(req.body)
