@@ -83,7 +83,9 @@ app.get("/", (req, res) => {
   console.log(req.session.id);
   res.send("Session Index");
 });
-app.listen(8080, () => console.log("Server started on port"));
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => console.log("Server started on port"));
 
 
 
