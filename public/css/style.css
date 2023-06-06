@@ -1,8 +1,172 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 其他樣式設定 */
+}
+    #All
+    {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    #else
+    {
+        position: absolute;
+        padding: 200px;
+    }
+    #containt
+    {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 900px;
+        height: 650px;
+        /* overflow: hidden; */
+        /* background-color: rgb(238, 225, 255); */
+    }
+
+    .page {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+
+    .gotoUp {
+        position: fixed;
+        left: 0.5%;
+        top: 50%;
+        width: 10%;
+        cursor: pointer;
+    }
+
+    .gotodown {
+        position: absolute;
+        right:0.5%;
+        top: 50%;
+        width: 10%;
+        cursor: pointer;
+    }
+
+    .backgroundtop {
+
+        display: grid;
+        place-items: center;
+        margin: auto; 
+        width: 100%;
+        max-width: 450px;
+    }
+
+    .background {
+        
+        display: grid;
+        place-items: center;
+        margin: auto; 
+        /* height: 100%; */
+        width: 100%;
+
+        max-width: 900px;
+        max-height: 650px;
+
+
+    }
+    .background,
+    .other-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .PagenumL{
+        position: absolute;
+        left:3%;
+        bottom: 2%;
+        font-size: 20px;
+    }
+    .PagenumR{
+        position: absolute;
+        right:3%;
+        bottom: 2%;
+        font-size: 20px;
+    }
+    .rectangle
+    {
+        background-color: rgba(255, 255, 255, 0.659);
+        height: 200px;
+        width: 200;
+        position: absolute;
+        border:5px solid rgba(255, 175, 100, 0.508);
+        border-radius: 30px;;
+    }
+
+    .glow-circle {
+        width: 39px;
+        height: 39px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.238);
+        position: relative;
+    }
+
+    .glow-circle::before {
+        content: "";
+        position: absolute;
+        /* top: -5px; */
+        /* left: -5px; */
+        width: calc(100% );
+        height: calc(100% );
+        border-radius: 50%;
+        box-shadow: 0 0 8px 5px rgb(255, 255, 255);
+        opacity: 10;
+        animation: glow-animation 1.5s infinite;
+    }
+
+    .playgamePic{
+        overflow:hidden;
+        position: absolute;
+        top:15%;left:30%;
+        width:15%;
+    }
+    .playgamePic img{
+        transform:scale(1,1);
+        transition: all 1s ease-out;
+    }
+    .playgamePic img:hover{
+        transform:scale(1.2,1.2);
+    }
+ 
+@keyframes glow-animation {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
-a {
-  color: #00B7FF;
-}
+
+
+    /* 媒體查詢 */
+    @media only screen and (max-width: 768px) {
+        .backgroundtop,
+        .background {
+            /* padding: 20px; */
+        }
+
+        .bookTitle {
+            width: 80%;
+            left: 10%;
+            top: 50px;
+        }
+
+        .pageNumber {
+            top: 10%;
+        }
+    }
