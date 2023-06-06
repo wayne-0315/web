@@ -248,7 +248,7 @@ router.post('/upload', upload.single("file"), function (req, res, next) {
 	console.log(req.file)
 
 		var _news = new newsModel({
-//			photos: req.file.filename
+			photos: req.file.filename
 		});
 
 		_news.save(function (err, data) {
