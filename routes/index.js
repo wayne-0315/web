@@ -242,30 +242,30 @@ router.get('/getArticleById', function (req, res) {
 	});
 });
 // -------------------------------news-------------------------------------------------
-// router.post('/upload', upload.single("file"), function (req, res, next) {
+router.post('/upload', upload.single("file"), function (req, res, next) {
 	
-// 	console.log('----1111------')
-// 	console.log(req.file)
+	console.log('----1111------')
+	console.log(req.file)
 
-// 		var _news = new newsModel({
-// 			photos: req.file.filename
-// 		});
+		var _news = new newsModel({
+			// photos: req.file.filename
+		});
 
-// 		_news.save(function (err, data) {
-// 			if (err) {
-// 				res.json({ "status": 1, "msg": "error" });
-// 			}
-// 			else {
-// 				res.json({
-// 					"status": 0, "msg": "success",
-// 					"photos": data.photos
-// 				});
-// 			}
-// 		});
+		_news.save(function (err, data) {
+			if (err) {
+				res.json({ "status": 1, "msg": "error" });
+			}
+			else {
+				res.json({
+					"status": 0, "msg": "success",
+					"photos": data.photos
+				});
+			}
+		});
 
 	
 	
-// });
+});
 router.post('/newsupdate', function (req, res) {
 	console.log('----222------')
 console.log(req.body)
