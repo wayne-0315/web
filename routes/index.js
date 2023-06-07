@@ -119,8 +119,26 @@ const upload = multer({
 //這裡是單純儲存圖片
 router.post('/upload', upload.single("file"), function (req, res, next) {
 	
-	console.log('----1111------')
-	console.log(req.file)
+	console.log('----1111 test again------')
+// 	console.log(req.file)
+	var _news = new newsModel({
+			photos: req.file.filename
+		});
+
+		_news.save(function (err, data) {
+			console.log('----129 comming here------')
+			if (err) {
+				console.log('----131 comming here------')
+				res.json({ "status": 1, "msg": "error" });
+			}
+			else {
+				console.log('----135 comming here------')
+				res.json({
+					"status": 0, "msg": "success",
+					"photos": data.photos
+				});
+			}
+		});
 
 	
 	//photoss = req.file.filename
