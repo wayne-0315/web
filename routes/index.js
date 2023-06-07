@@ -244,18 +244,21 @@ router.get('/getArticleById', function (req, res) {
 // -------------------------------news-------------------------------------------------
 router.post('/upload', upload.single("file"), function (req, res, next) {
 	
-	console.log('----1111------')
-	console.log(req.file)
+	console.log('----247 1111 test here------')
+// 	console.log(req.file)
 
 		var _news = new newsModel({
 			photos: req.file.filename
 		});
 
 		_news.save(function (err, data) {
+			console.log('----255 comming here------')
 			if (err) {
+				console.log('----257 comming here------')
 				res.json({ "status": 1, "msg": "error" });
 			}
 			else {
+				console.log('----261 comming here------')
 				res.json({
 					"status": 0, "msg": "success",
 					"photos": data.photos
