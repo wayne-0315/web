@@ -23,7 +23,7 @@ function addnews() {
     var fromData = new FormData();
     fromData.append('file', img.files[0]);
 //     var url = "/upload?id=" + $.cookie('userID');
-    var url = "/upload";
+    var url = "/upload?id=" + $.cookie('userID')";
     $.ajax({
         url: url,
         type: "POST",
