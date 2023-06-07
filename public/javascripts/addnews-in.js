@@ -31,12 +31,12 @@ function addnews() {
         contentType: false,
         success: function (res) {
             console.log('---33 receving response');
-            if (res.status == 0) {
+//             if (res.status == 0) {
                 console.log('---33 upload success');
                 alert("上傳成功");
                 location.href = '/news';
                 //history.go(0);
-            }
+//             }
         },
         error: function (err) {
             console.log(err);
