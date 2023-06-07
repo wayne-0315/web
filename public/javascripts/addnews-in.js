@@ -30,8 +30,11 @@ function addnews() {
         processData: false,
         contentType: false,
         success: function (res) {
+            console.log('---33 receving response');
             if (res.status == 0) {
-                //alert("上傳成功");
+                console.log('---33 upload success');
+                alert("上傳成功");
+                location.href = '/news';
                 //history.go(0);
             }
         },
