@@ -77,7 +77,11 @@
 
  
     <div class="margin"></div>
-
+    <div class="container">
+        <div class="row">
+            <div class="col-12 btn btn-outline-primary" id="testBtn">clickme</div>
+        </div>
+    </div>
     <div class="container1">
             
             <form class="lostitem3" id="upload-form" action="/upload" method="post" enctype="multipart/form-data" style="background-color: #ffffff;color: black;">
@@ -151,6 +155,12 @@
                   }
                   file.readAsText(this.files[0]);
                 });
+                
+                 
+                const testBtn = document.getElementById('testBtn');
+                testBtn.addEventListener('click', () => {
+                    location.href = './news';
+                })
             </script>
 
 
