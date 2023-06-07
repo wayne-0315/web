@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="css/navfot.css">
     <link rel="stylesheet" href="css/card.css">
     <link rel="stylesheet" href="css/paragraph.css">
-    <script type="text/javascript" src="javascripts/members.js"></script>
+    // <script type="text/javascript" src="javascripts/members.js"></script>
    
     <title>檔案上傳</title>
 </head>
@@ -143,23 +143,24 @@
             </div>
             </form>
             
-
-            
             <br>
+            
             <pre id="output"></pre>
+            
             <script type="text/javascript">
-                document.getElementById('inputFile').addEventListener('change', function() {
-                  var file = new FileReader();
-                  file.onload = () => {
-                    document.getElementById('output').textContent = file.result;
-                  }
-                  file.readAsText(this.files[0]);
-                });
+                // document.getElementById('inputFile').addEventListener('change', function() {
+                //   var file = new FileReader();
+                //   file.onload = () => {
+                //     document.getElementById('output').textContent = file.result;
+                //   }
+                //   file.readAsText(this.files[0]);
+                // });
                 
                  
                 const testBtn = document.getElementById('testBtn');
                 testBtn.addEventListener('click', () => {
-                    location.href = './news';
+                console.log('----------------')
+                    location.href = '/news';
                 })
             </script>
 
