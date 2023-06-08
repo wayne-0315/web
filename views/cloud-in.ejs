@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/paragraph.css">
     <link rel="stylesheet" href="backbtn.js">
     <link rel="stylesheet" href="css/backbtn.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
     <title>內文</title>
 
 </head>
@@ -96,24 +97,12 @@
 
     
 
-    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
     <script type="text/javascript" src="./javascripts/cloud-in.js"></script>
-    <script type="text/javascript" src="javascripts/members.js"></script>
+    
 
-    <script>
-        function showDetails(element) {
-            document.getElementById("overlay").style.display = "block";
-            document.getElementById("details").style.display = "block";
-
-            const lostitem = element.querySelector("img").getAttribute("src");
-            document.getElementById("image2").src = lostitem;
-        }
-        document.getElementById("overlay").addEventListener("click", function () {
-            document.getElementById("details").style.display = "none";
-            document.getElementById("overlay").style.display = "none";
-        });
-    </script>
+    
 
 <footer>
     <img src="img/ci.png" class="logo_foot">
