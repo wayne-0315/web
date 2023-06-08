@@ -22,7 +22,7 @@ function addvillage() {
     }
     var fromData = new FormData();
     fromData.append('file', img.files[0]);
-    var url = "/upload1?id=" + $.cookie('userID');
+    var url = "/upload;
     $.ajax({
         url: url,
         type: "POST",
