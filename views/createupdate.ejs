@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="css/navfot.css">
     <link rel="stylesheet" href="css/card.css">
     <link rel="stylesheet" href="css/paragraph.css">
-    <script type="text/javascript" src="javascripts/members.js"></script>
+
    
     <title>檔案上傳</title>
 </head>
@@ -79,27 +79,8 @@
     <div class="margin"></div>
 
     <div class="container1">
-            <!-- <form class="lostitem3" id="upload-form" action="/upload" method="post" enctype="multipart/form-data" style="background-color: #6a8745;">
-                
-                 <p style="margin: 0;">選擇圖片檔案</p>
-                <input type="file" name="image" id="upload-input" accept="image/*"/>
-                <img id="image" src="" alt="image preview" style="display: none;" />
-                <button id="submit" class="control" type="submit" onclick="addArticle()">上傳</button> -->
-                
-                <!-- <label for="field6">
-                    <span>內文</span>
-                    <br>
-                        <textarea name="" id="content" cols="30" rows="10"></textarea>
-                </label>
-                <br>
-                <label for="">
-                    <span>&nbsp;</span>
-                    
-                    
-                </label>
-                
-            </form> -->
-            <form class="lostitem3" id="upload-form" action="/upload" method="post" enctype="multipart/form-data" style="background-color: #ffffff;color: black;">
+            
+            <div class="lostitem3" id="upload-form" action="/upload" method="post" enctype="multipart/form-data" style="background-color: #ffffff;color: black;">
             <div class="w30leftblank"></div> <div class="form-style w40div">
                 <div style="width:100% ;float: left;">
                 <!-- <button class="commontn" style="float: right;"
@@ -156,84 +137,19 @@
                 </fieldset>
                 </form>
             </div>
-            </form>
-            <script>
-                document.getElementById('upload-input').addEventListener('change', function (event) {
-                    
-                    // 獲取選擇的圖片
-                    const file = event.target.files[0];
-                    // 創建一個 FileReader 對象
-                    const reader = new FileReader();
-                    // 監聽 reader 的 load 事件，轉換圖片並顯示圖片
-                    reader.onload = function (event) {
-                        // 將圖片轉換為 data URL
-                        const dataURL = event.target.result;
-                        // 將 data URL 設置到 img 的 src 屬性中，顯示圖片
-                        document.getElementById('image').style.display = 'block';
-                        document.getElementById('image').src = dataURL;
-                    };
-                    // 讀取圖片
-                    reader.readAsDataURL(file);
-                });
-            </script>
-            <!--
-                <textarea name="text" id="upload-text"></textarea>
-
-            <script>
-                document.getElementById('upload-text').addEventListener('change', function (event) {
-                    // 獲取輸入的文字
-                    const text = event.target.value;
-                    // 傳送文字到伺服器
-                    // ...
-                });
-            </script>
-            -->
+            </div>
+            
             
             <br>
             <pre id="output"></pre>
-            <script type="text/javascript">
-                document.getElementById('inputFile').addEventListener('change', function() {
-                  var file = new FileReader();
-                  file.onload = () => {
-                    document.getElementById('output').textContent = file.result;
-                  }
-                  file.readAsText(this.files[0]);
-                });
-            </script>
+           
 
 
-            <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
             <script type="text/javascript" src="./javascripts/addcreate-in.js"></script>
             
-            <!--
-
-                 <a href="register"><button class="btn">re</button></a>
-            <form class="login-id" action="/register" method="post">
-                <input 
-                    class="control" 
-                    id="tt"
-                    name="tt"
-                    type="text" 
-                    placeholder="ID" 
-                />
-                <button class="control" type="submit" id="login">SUBMIT</button>
-            </form>
-            <form action="/process" method="POST">
-                <ul>
-                  <li>
-                    <input type="hidden" name="hush" val="hidden, but not secret!" />
-                  </li>
-                  <li>
-                    <label for="fieldColor">
-                      Your favorite color:
-                      <input type="text" id="fieldColor" name="color" />
-                    </label>
-                  </li>
-                </ul>
-                <button type="submit">Submit</button>
-              </form>
-            -->
+            
            
             
         
