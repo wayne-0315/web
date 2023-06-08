@@ -32,11 +32,11 @@ function addnews() {
         contentType: false,
         async: false,
         success: function (res) {
-            console.log('---33 receving response');
+//             console.log('---33 receving response');
             if (res.status == 0) {
 //                 console.log('---33 upload success');
-//                 alert("上傳成功");
-//                 location.href = '/news';
+                alert("上傳成功");
+                location.href = '/news';
                 //history.go(0);
             }
         },
@@ -48,8 +48,8 @@ function addnews() {
 
     $.post("/newsupdate", postdata, function (res) {
         if (res.status == 0) {
-            alert('發文成功');
-            location.href = '/news';
+//             alert('發文成功');
+//             location.href = '/news';
         }
     });
 }
