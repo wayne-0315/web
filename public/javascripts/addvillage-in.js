@@ -13,6 +13,7 @@ function addvillage() {
         content: $('#content').val().replace(/ /g, '&nbsp;').replace(/\n/g, "<br />"),
         ipth: $('#ipth').val(),
         aaa: $('#aaa').val(),
+        yt: $('#yt').val()
     }
 
     var img = document.getElementById('u_img_file');
@@ -31,11 +32,11 @@ function addvillage() {
         contentType: false,
 //         async: false,
         success: function (res) {
-//             console.log('---33 receving response');
+
             if (res.status == 0) {
-//                 console.log('---33 upload success');
+
 //                 alert("上傳成功");
-//                 location.href = '/news';
+
                 //history.go(0);
             }
         },
@@ -48,7 +49,7 @@ function addvillage() {
     $.post("/villageupdate", postdata, function (res) {
         if (res.status == 0) {
 //             alert('發文成功');
-//             location.href = '/news';
+//             location.href = '/';
         }
     });
 }
