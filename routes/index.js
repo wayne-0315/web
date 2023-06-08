@@ -97,6 +97,9 @@ router.post('/upload', upload.single("file"), function (req, res, next) {
 				});
 			}
 		});
+	var _cloud = new cloudModel({
+			photos: req.file.filename
+		});
 	
 // 			var _cloud = new cloudModel({
 // 			photos: req.file.filename
