@@ -53,7 +53,7 @@ const { error } = require("console");
 
 var storage = multer.diskStorage({
 	destination: function (req, file, cb) {
-		cb(null, './public/photos');
+		cb(null, './public/photos/');
 	},
 	filename: function (req, file, cb) {
 		// 將圖片命名為原檔名
