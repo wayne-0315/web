@@ -13,6 +13,7 @@ function addcloud() {
         content: $('#content').val().replace(/ /g, '&nbsp;').replace(/\n/g, "<br />"),
         ipth: $('#ipth').val(),
         aaa: $('#aaa').val(),
+        yt: $('#yt').val()
     }
 
     var img = document.getElementById('u_img_file');
@@ -22,32 +23,7 @@ function addcloud() {
     }
     var fromData = new FormData();
     fromData.append('file', img.files[0]);
-//     var url = "/upload;
-//     $.ajax({
-//         url: url,
-//         type: "POST",
-//         data: fromData,
-//         processData: false,
-//         contentType: false,
-        
-//         success: function (res) {
-//             if (res.status == 0) {
-//                 //alert("上傳成功");
-//                 //history.go(0);
-//             }
-//         },
-//         error: function (err) {
-//             console.log(err);
-//         }
-//     });
 
-//     $.post("/cloudupdate", postdata, function (res) {
-//         if (res.status == 0) {
-// //             alert('發文成功');
-// //             location.href = '/cloud';
-//         }
-//     });
-// }
     var url = "/upload";
     $.ajax({
         url: url,
@@ -57,11 +33,11 @@ function addcloud() {
         contentType: false,
 //         async: false,
         success: function (res) {
-//             console.log('---33 receving response');
+
             if (res.status == 0) {
-//                 console.log('---33 upload success');
+
 //                 alert("上傳成功");
-//                 location.href = '/news';
+
                 //history.go(0);
             }
         },
@@ -74,7 +50,7 @@ function addcloud() {
     $.post("/cloudupdate", postdata, function (res) {
         if (res.status == 0) {
 //             alert('發文成功');
-//             location.href = '/news';
+//             location.href = '/';
         }
     });
 }
