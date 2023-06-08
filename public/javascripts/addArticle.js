@@ -23,16 +23,20 @@ function addArticle() {
     }
     var fromData = new FormData();
     fromData.append('file', img.files[0]);
-    var url = "/upload?id=" + $.cookie('userID');
+    var url = "/upload";
     $.ajax({
         url: url,
         type: "POST",
         data: fromData,
         processData: false,
         contentType: false,
+//         async: false,
         success: function (res) {
+//             console.log('---33 receving response');
             if (res.status == 0) {
-                //alert("上傳成功");
+//                 console.log('---33 upload success');
+//                 alert("上傳成功");
+//                 location.href = '/news';
                 //history.go(0);
             }
         },
@@ -40,11 +44,12 @@ function addArticle() {
             console.log(err);
         }
     });
+    
 
     $.post("/lostupdate", postdata, function (res) {
         if (res.status == 0) {
-            alert('發文成功');
-            location.href = '/lost';
+//             alert('發文成功');
+//             location.href = '/news';
         }
     });
 }
