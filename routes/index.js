@@ -1716,11 +1716,11 @@ router.post("/login", async (req, res) => {
 		return res.render("login");
 	}
 
-	const verifyPW = await bcrypt.compare(pw, member.pw);
-	if (!verifyPW) {
-		console.log("PW is incorrect!!!");
-		return res.render("login");
-	}
+// 	const verifyPW = await bcrypt.compare(pw, member.pw);
+// 	if (!verifyPW) {
+// 		console.log("PW is incorrect!!!");
+// 		return res.render("login");
+// 	}
 
 	req.session.isAuth = true;
 	req.session.name = member.id;
