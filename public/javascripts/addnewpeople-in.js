@@ -13,7 +13,7 @@ function addnewpeople() {
         content: $('#content').val().replace(/ /g, '&nbsp;').replace(/\n/g, "<br />"),
         ipth: $('#ipth').val(),
         aaa: $('#aaa').val(),
-        title1: $('#title1').val(),
+        yt: $('#yt').val()
     }
 
     var img = document.getElementById('u_img_file');
@@ -23,16 +23,20 @@ function addnewpeople() {
     }
     var fromData = new FormData();
     fromData.append('file', img.files[0]);
-    var url = "/upload1?id=" + $.cookie('userID');
+    var url = "/upload";
     $.ajax({
         url: url,
         type: "POST",
         data: fromData,
         processData: false,
         contentType: false,
+//         async: false,
         success: function (res) {
+
             if (res.status == 0) {
-                //alert("上傳成功");
+
+//                 alert("上傳成功");
+
                 //history.go(0);
             }
         },
@@ -40,11 +44,12 @@ function addnewpeople() {
             console.log(err);
         }
     });
+    
 
     $.post("/newpeopleupdate", postdata, function (res) {
         if (res.status == 0) {
-            alert('發文成功');
-            location.href = '/newpeople';
+//             alert('發文成功');
+//             location.href = '/';
         }
     });
 }
