@@ -79,9 +79,9 @@ router.post('/upload', upload.single("file"), function (req, res, next) {
 	
 
 	
-// 	var _news = new newsModel({
-// 			photos: req.file.filename
-// 		});
+	var _news = new newsModel({
+			photos: req.file.filename
+		});
 
 // 		_news.save(function (err, data) {
 			
