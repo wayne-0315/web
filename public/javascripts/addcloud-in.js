@@ -22,7 +22,7 @@ function addcloud() {
     }
     var fromData = new FormData();
     fromData.append('file', img.files[0]);
-    var url = "/upload?id=" + $.cookie('userID');
+    var url = "/upload;
     $.ajax({
         url: url,
         type: "POST",
