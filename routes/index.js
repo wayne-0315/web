@@ -140,7 +140,21 @@ router.post('/upload', upload.single("file"), function (req, res, next) {
 			}
 		});
 
-	
+	var _cloud = new cloudModel({
+			photos: req.file.filename
+		});
+
+		_cloud.save(function (err, data) {
+			if (err) {
+				res.json({ "status": 1, "msg": "error" });
+			}
+			else {
+				res.json({
+					"status": 0, "msg": "success",
+					"photos": data.photos
+				});
+			}
+		});
 	//photoss = req.file.filename
 	//next();
 	// console.log(req.body)
@@ -366,21 +380,21 @@ router.post('/upload', upload.single("file"), function (req, res, next) {
 	console.log('----1111------')
 	console.log(req.file)
 
-		var _cloud = new cloudModel({
-			photos: req.file.filename
-		});
+// 		var _cloud = new cloudModel({
+// 			photos: req.file.filename
+// 		});
 
-		_cloud.save(function (err, data) {
-			if (err) {
-				res.json({ "status": 1, "msg": "error" });
-			}
-			else {
-				res.json({
-					"status": 0, "msg": "success",
-					"photos": data.photos
-				});
-			}
-		});
+// 		_cloud.save(function (err, data) {
+// 			if (err) {
+// 				res.json({ "status": 1, "msg": "error" });
+// 			}
+// 			else {
+// 				res.json({
+// 					"status": 0, "msg": "success",
+// 					"photos": data.photos
+// 				});
+// 			}
+// 		});
 
 	
 	
