@@ -29,6 +29,7 @@ function addcloud() {
         data: fromData,
         processData: false,
         contentType: false,
+        
         success: function (res) {
             if (res.status == 0) {
                 //alert("上傳成功");
@@ -42,8 +43,8 @@ function addcloud() {
 
     $.post("/cloudupdate", postdata, function (res) {
         if (res.status == 0) {
-            alert('發文成功');
-            location.href = '/cloud';
+//             alert('發文成功');
+//             location.href = '/cloud';
         }
     });
 }
