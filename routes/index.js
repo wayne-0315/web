@@ -101,21 +101,9 @@ router.post('/upload', upload.single("file"), function (req, res, next) {
 			photos: req.file.filename
 		});
 	
-// 			var _cloud = new cloudModel({
-// 			photos: req.file.filename
-// 		});
-
-// 		_cloud.save(function (err, data) {
-// 			if (err) {
-// 				res.json({ "status": 1, "msg": "error" });
-// 			}
-// 			else {
-// 				res.json({
-// 					"status": 0, "msg": "success",
-// 					"photos": data.photos
-// 				});
-// 			}
-// 		});
+	var _village = new villageModel({
+			photos: req.file.filename
+		});
 	
 		var _article = new articleModel({
 			photos: req.file.filename
@@ -527,7 +515,7 @@ router.post('/upload', upload.single("file"), function (req, res, next) {
 	console.log('----1111------')
 	console.log(req.file)
 
-		var _newpeople = new newpeopleModel({
+		var _village = new villageModel({
 			photos: req.file.filename
 		});
 
@@ -625,7 +613,7 @@ router.post('/upload', upload.single("file"), function (req, res, next) {
 	console.log('----1111------')
 	console.log(req.file)
 
-		var _muslin = new muslinModel({
+		var _village = new villageModel({
 			photos: req.file.filename
 		});
 
@@ -723,7 +711,7 @@ router.post('/upload', upload.single("file"), function (req, res, next) {
 	console.log('----1111------')
 	console.log(req.file)
 
-		var _market = new marketModel({
+		var _village = new villageModel({
 			photos: req.file.filename
 		});
 
@@ -821,7 +809,7 @@ router.post('/upload', upload.single("file"), function (req, res, next) {
 	console.log('----1111------')
 	console.log(req.file)
 
-		var _buy = new buyModel({
+		var _village = new villageModel({
 			photos: req.file.filename
 		});
 
@@ -921,7 +909,7 @@ router.post('/upload', upload.single("file"), function (req, res, next) {
 	console.log('----1111------')
 	console.log(req.file)
 
-		var _child = new childModel({
+		var _village = new villageModel({
 			photos: req.file.filename
 		});
 
@@ -1019,7 +1007,7 @@ router.post('/upload', upload.single("file"), function (req, res, next) {
 	console.log('----1111------')
 	console.log(req.file)
 
-		var _chin = new chinModel({
+		var _village = new villageModel({
 			photos: req.file.filename
 		});
 
@@ -1117,7 +1105,7 @@ router.post('/upload', upload.single("file"), function (req, res, next) {
 	console.log('----1111------')
 	console.log(req.file)
 
-		var _park = new parkModel({
+		var _village = new villageModel({
 			photos: req.file.filename
 		});
 
@@ -1215,7 +1203,7 @@ router.post('/upload', upload.single("file"), function (req, res, next) {
 	console.log('----1111------')
 	console.log(req.file)
 
-		var _create = new createModel({
+		var _village = new villageModel({
 			photos: req.file.filename
 		});
 
