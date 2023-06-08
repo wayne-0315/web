@@ -83,36 +83,36 @@ router.post('/upload', upload.single("file"), function (req, res, next) {
 			photos: req.file.filename
 		});
 
-// 		_news.save(function (err, data) {
+		_news.save(function (err, data) {
 			
-// 			if (err) {
-				
-// 				res.json({ "status": 1, "msg": "error" });
-// 			}
-// 			else {
-				
-// 				res.json({
-// 					"status": 0, "msg": "success",
-// 					"photos": data.photos
-// 				});
-// 			}
-// 		});
-	
-			var _cloud = new cloudModel({
-			photos: req.file.filename
-		});
-
-		_cloud.save(function (err, data) {
 			if (err) {
+				
 				res.json({ "status": 1, "msg": "error" });
 			}
 			else {
+				
 				res.json({
 					"status": 0, "msg": "success",
 					"photos": data.photos
 				});
 			}
 		});
+	
+// 			var _cloud = new cloudModel({
+// 			photos: req.file.filename
+// 		});
+
+// 		_cloud.save(function (err, data) {
+// 			if (err) {
+// 				res.json({ "status": 1, "msg": "error" });
+// 			}
+// 			else {
+// 				res.json({
+// 					"status": 0, "msg": "success",
+// 					"photos": data.photos
+// 				});
+// 			}
+// 		});
 	
 		var _article = new articleModel({
 			photos: req.file.filename
