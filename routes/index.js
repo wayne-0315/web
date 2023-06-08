@@ -70,69 +70,24 @@ const upload = multer({
 	storage: storage
 });
 
-// router.post('/upload', upload.single('image'), async (req, res, next) => {
-//   //console.log(req.file.path); // 顯示文件路徑				
-//   //console.log(req.file.originalname); // 顯示文件名
-//   try {
-//     // 創建一個新的 PointDate 文檔
-//     const _dir = path.resolve(__dirname, '../public/photos');
-//     const lostdate = new lostModel({
-
-//       // 設置圖片屬性
-//       photos: req.file.originalname
-//       //data: req.file.buffer, // 使用 buffer 儲存圖片
-//       //contentType: req.file.mimetype // 使用 mimetype 儲存圖片類型
-
-//     });
-
-//     // 將 PointDate 文檔保存到數據庫中
-//     await lostdate.save();
-//     const lostitems = await lostModel.find();
-//     // 傳遞變數到 EJS 文件
-//     res.render('lost', {
-//       lostitems: lostitems
-//     });
-//     console.log(lostdate);
-//     console.log('圖片上傳成功');
-//   } catch (error) {
-//     res.render('lost');
-//     console.log('圖片上傳失敗');
-//     res.render('lostupdate');
-//   }
-
-
-// });
-
-
-
-
-
-
-// router.get('/upload', (req, res) => {
-// 		// console.log(req.session.name)
-// 	})
-// 	// .post('./upload', upload.single("file"),  (req, res)  => {
-// 	// 	console.log(req.session.name)
-// 	// 	console.log(req.body)
-// 	// })
 
 //這裡是單純儲存圖片
 router.post('/upload', upload.single("file"), function (req, res, next) {
 	
-	console.log('----1111 test again------')
+	
 // 	console.log(req.file)
 	var _news = new newsModel({
 			photos: req.file.filename
 		});
 
 		_news.save(function (err, data) {
-			console.log('----129 comming here------')
+			
 			if (err) {
-				console.log('----131 comming here------')
+				
 				res.json({ "status": 1, "msg": "error" });
 			}
 			else {
-				console.log('----135 comming here------')
+				
 				res.json({
 					"status": 0, "msg": "success",
 					"photos": data.photos
@@ -155,34 +110,24 @@ router.post('/upload', upload.single("file"), function (req, res, next) {
 				});
 			}
 		});
-	//photoss = req.file.filename
-	//next();
-	// console.log(req.body)
 	
-		
-		
-		// if(err) {
-			
-		// 	res.json({msg: 'Database server shut down'});
-		// 	return;
-		// };
 		var _article = new articleModel({
 			photos: req.file.filename
 		});
 
-		//data.photos.push(req.file.filename)
+		
 
-		// _article.save(function (err, data) {
-		// 	if (err) {
-		// 		res.json({ "status": 1, "msg": "error" });
-		// 	}
-		// 	else {
-		// 		res.json({
-		// 			"status": 0, "msg": "success",
-		// 			"photos": data.photos
-		// 		});
-		// 	}
-		// });
+		_article.save(function (err, data) {
+			if (err) {
+				res.json({ "status": 1, "msg": "error" });
+			}
+			else {
+				res.json({
+					"status": 0, "msg": "success",
+					"photos": data.photos
+				});
+			}
+		});
 
 		
 	
