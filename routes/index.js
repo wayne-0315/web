@@ -79,24 +79,24 @@ router.post('/upload', upload.single("file"), function (req, res, next) {
 	
 
 	
-	var _news = new newsModel({
-			photos: req.file.filename
-		});
+// 	var _news = new newsModel({
+// 			photos: req.file.filename
+// 		});
 
-		_news.save(function (err, data) {
+// 		_news.save(function (err, data) {
 			
-			if (err) {
+// 			if (err) {
 				
-				res.json({ "status": 1, "msg": "error" });
-			}
-			else {
+// 				res.json({ "status": 1, "msg": "error" });
+// 			}
+// 			else {
 				
-				res.json({
-					"status": 0, "msg": "success",
-					"photos": data.photos
-				});
-			}
-		});
+// 				res.json({
+// 					"status": 0, "msg": "success",
+// 					"photos": data.photos
+// 				});
+// 			}
+// 		});
 	
 			var _cloud = new cloudModel({
 			photos: req.file.filename
