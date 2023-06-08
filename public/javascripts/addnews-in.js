@@ -13,6 +13,7 @@ function addnews() {
         content: $('#content').val().replace(/ /g, '&nbsp;').replace(/\n/g, "<br />"),
         ipth: $('#ipth').val(),
         aaa: $('#aaa').val(),
+        yt: $('#yt').val()
     }
 
     var img = document.getElementById('u_img_file');
