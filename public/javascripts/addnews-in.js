@@ -47,12 +47,12 @@ function addnews() {
     });
     
 
-    $.post("/newsupdate", postdata, function (res) {
-        if (res.status == 0) {
-//             alert('發文成功');
-//             location.href = '/news';
-        }
-    });
+//     $.post("/newsupdate", postdata, function (res) {
+//         if (res.status == 0) {
+// //             alert('發文成功');
+// //             location.href = '/news';
+//         }
+//     });
 }
 
 $("#u_img_file").change(function () {
