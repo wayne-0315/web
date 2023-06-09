@@ -909,7 +909,7 @@ router.post('/upload', upload.single("file"), function (req, res, next) {
 	console.log('----1111------')
 	console.log(req.file)
 
-		var _village = new villageModel({
+		var _child = new childModel({
 			photos: req.file.filename
 		});
 
