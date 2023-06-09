@@ -192,7 +192,7 @@ a.greenbtn:active {
     --bs-btn-active-border-color: #ffdd5f;
 }
 
-.lightobtn.btn-primary {
+.pinkbtn.btn-primary {
     --bs-btn-active-bg: #e32c6c;
     --bs-btn-active-border-color: #e32c6c;
 }
@@ -202,29 +202,8 @@ a.greenbtn:active {
     --bs-btn-active-border-color: #e95318;
 }
 
-
-a.oybtn {
-    float: right;
-    position: row;
-    background-color: white;
-    color: #fdab2b;
-    border: #fdab2b 3px solid;
-    bottom: 10px;
-    font-family: Helvetica;
-    font-size: 18px;
-}
-
-a.oybtn:hover {
-    color: #fff;
-    background-color: #fdab2b;
-    border: #fdab2b 3px solid;
-}
-
-a.oybtn:active {
-    background-color: #fdab2b;
-}
-
-.oybtn:not(.btn):active {
-    background-color: #fdab2b !important;
-    border: #fdab2b 3px solid;
-}
+.buy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

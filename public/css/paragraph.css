@@ -18,62 +18,9 @@
 .image-wrapper img {
   align-items: center;
   justify-content: center;
-
   width: 100%;
   height: auto;
   max-width: 560px;
-}
-/* .buybtn {
-  border: 3px #e32c6c  solid;
-  background-color: #fff;
-  border-radius: 6px;
-  width: 100px;
-  height: 50px;
-  color: #e32c6c;
-  font-family: Helvetica;
-  float: center;
-}
-
-.buybtn:hover {
-  background-color: #e32c6c;
-  border: 3px #fff solid;
-}
-.bbtn {
-  color: #e32c6c;
-  font-size: 25px;
-  display: flex;
-  width: 100px;
-  height: 50px;
-}
-
-.bbtn:hover .buybtn {
-  color: #fff;
-} */
-
-.bbtn {
-  border: 3px #e32c6c  solid;
-  background-color: #fff;
-  border-radius: 6px;
-  width: 100px;
-  height: 50px;
-  color: #e32c6c;
-  font-family: Helvetica;
-  float: center;
-}
-
-.bbtn:hover {
-  background-color: #e32c6c;
-  border: 3px #fff solid;
-}
-
-.buybtn {
-  color: #e32c6c;
-  font-size: 25px;
-  display: flex;
-}
-
-.buybtn:hover .bbtn {
-  color: #fff;
 }
 
 h1 {
@@ -83,6 +30,18 @@ h1 {
 h3{
   color: black;
   text-decoration: none;
+}
+.acover{
+  display: flex;
+  justify-content: center;
+}
+.cover{
+  width:500px ;
+}
+
+iframe{
+  width: 720px;
+  height: 480px;
 }
 
 @media (max-width: 768px) {
@@ -97,7 +56,7 @@ h3{
     max-width: 560px;
   }
   .image-wrapper P{
-    max-width: 560px;
+    max-width: 900px;
   }
 }
 
