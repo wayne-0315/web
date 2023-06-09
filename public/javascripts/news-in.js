@@ -14,11 +14,10 @@ function initnews(data) {
         <p class="image-caption">
         ${data.content}
         <br>
-        </p>
         <a href="${data.aaa}"
             target="_blank" class="link">
             ${data.aaa}</a>
-        
+        </p>
                 <img class="" src="../photos/${data.ipth}">
         </div>           
         </div>        
