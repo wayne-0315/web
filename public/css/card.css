@@ -207,3 +207,29 @@ a.greenbtn:active {
     justify-content: center;
     align-items: center;
   }
+
+a.oybtn {
+    float: right;
+    position: row;
+    background-color: white;
+    color: #fdab2b;
+    border: #fdab2b 3px solid;
+    bottom: 10px;
+    font-family: Helvetica;
+    font-size: 18px;
+}
+
+a.oybtn:hover {
+    color: #fff;
+    background-color: #fdab2b;
+    border: #fdab2b 3px solid;
+}
+
+a.oybtn:active {
+    background-color: #fdab2b;
+}
+
+.oybtn:not(.btn):active {
+    background-color: #fdab2b !important;
+    border: #fdab2b 3px solid;
+}
