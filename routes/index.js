@@ -79,9 +79,9 @@ router.post('/upload', upload.single("file"), function (req, res, next) {
 	
 
 	
-	var _news = new newsModel({
-			photos: req.file.filename
-		});
+// 	var _news = new newsModel({
+// 			photos: req.file.filename
+// 		});
 
 // 		_news.save(function (err, data) {
 			
@@ -97,17 +97,17 @@ router.post('/upload', upload.single("file"), function (req, res, next) {
 // 				});
 // 			}
 // 		});
-	var _cloud = new cloudModel({
-			photos: req.file.filename
-		});
+// 	var _cloud = new cloudModel({
+// 			photos: req.file.filename
+// 		});
 	
-	var _village = new villageModel({
-			photos: req.file.filename
-		});
+// 	var _village = new villageModel({
+// 			photos: req.file.filename
+// 		});
 	
-		var _article = new articleModel({
-			photos: req.file.filename
-		});
+// 		var _article = new articleModel({
+// 			photos: req.file.filename
+// 		});
 
 		
 
@@ -213,6 +213,27 @@ router.get('/getArticleById', function (req, res) {
 	});
 });
 // -------------------------------news-------------------------------------------------
+router.post('/newsupdate', function (req, res) {
+	console.log('----222------')
+console.log(req.body)
+var newnews = new newsModel({
+	title: req.body.title,
+	content: req.body.content,
+	postdate: new Date(),
+	ipth: req.body.ipth,
+	aaa: req.body.aaa
+	//photos: req.file.filename
+});
+
+newnews.save(function (err, data) {
+	if (err) {
+		res.json({ "status": 1, "msg": "error" });
+	}
+	else {
+		res.json({ "status": 0, "msg": "success", "data": data });
+	}
+});
+});
 router.post('/upload', upload.single("file"), function (req, res, next) {
 	
 	console.log('----247 1111 test here------')
@@ -240,27 +261,7 @@ router.post('/upload', upload.single("file"), function (req, res, next) {
 	
 	
 });
-router.post('/newsupdate', function (req, res) {
-	console.log('----222------')
-console.log(req.body)
-var newnews = new newsModel({
-	title: req.body.title,
-	content: req.body.content,
-	postdate: new Date(),
-	ipth: req.body.ipth,
-	aaa: req.body.aaa
-	//photos: req.file.filename
-});
 
-newnews.save(function (err, data) {
-	if (err) {
-		res.json({ "status": 1, "msg": "error" });
-	}
-	else {
-		res.json({ "status": 0, "msg": "success", "data": data });
-	}
-});
-});
 
 router.get('/getnews', function (req, res) {
 // var type = (req.query.type != undefined) ?
