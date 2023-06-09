@@ -1,14 +1,10 @@
 function addchild() {
     if ($('#title').val() == '' || $('#title').val() == null){
-        alert('請輸入姓名');
+        alert('請輸入標題');
         return;
     }
     if ($('#content').val() == '' || $('#content').val() == null){
-        alert('請輸入介紹');
-        return;
-    }
-    if (!/.(gif|jpg|jpeg|png|GIF|JPG|PNG|JPEG)$/.test(img.value)) {
-        alert("圖片類型不正確");
+        alert('請輸入內文');
         return;
     }
 
@@ -18,14 +14,16 @@ function addchild() {
         ipth: $('#ipth').val(),
         aaa: $('#aaa').val(),
         yt: $('#yt').val()
-        
     }
 
     var img = document.getElementById('u_img_file');
-    
+    if (!/.(gif|jpg|jpeg|png|GIF|JPG|PNG|JPEG)$/.test(img.value)) {
+        alert("圖片類型不正確");
+        return;
+    }
     var fromData = new FormData();
     fromData.append('file', img.files[0]);
-   var url = "/upload";
+    var url = "/upload";
     $.ajax({
         url: url,
         type: "POST",
