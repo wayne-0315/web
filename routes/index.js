@@ -931,7 +931,7 @@ router.post('/upload', upload.single("file"), function (req, res, next) {
 router.post('/childupdate', function (req, res) {
 	console.log('----222------')
 console.log(req.body)
-var newchin = new childModel({
+var newchild = new childModel({
 	title: req.body.title,
 	content: req.body.content,
 	postdate: new Date(),
