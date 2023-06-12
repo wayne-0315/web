@@ -1,18 +1,20 @@
-.con{
+.con {
     width: 40px;
     height: 40px;
 }
 
-.conlink{
+.conlink {
     color: black;
     text-decoration: none;
 }
-.map{
+
+.map {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     margin-top: 20px;
 }
-.abc{
+
+.abc {
     margin-right: 50px;
     font-size: 25px;
 }
@@ -21,7 +23,7 @@
     margin-bottom: 20px;
 }
 
-iframe{
+iframe {
     border: 0;
     width: 500px;
     height: 500px;
@@ -32,40 +34,57 @@ iframe{
     justify-content: center;
     margin-top: 20px;
 }
-input{
+
+input {
     width: 500px;
     height: 50px;
-} 
+}
 
-textarea{
+textarea {
     width: 500px;
-    resize:height;
-} 
+    resize: height;
+}
 
-label{
+label {
     font-size: 25px;
 }
 
-.submit{
-    border: 3px #EF8378 solid;
-    background-color: #fff;
-    font-weight: bold;
-    border-radius: 6px;
-    padding: 10px;
-    height: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    display: flex;
+.pkbtn {
+    float: right;
+    position: row;
+    background-color: white;
     color: #EF8378;
+    border: #EF8378 3px solid;
+    bottom: 10px;
+    font-family: Helvetica;
+    font-size: 18px;
+    width: 100px;
+    height: 45px;
 }
 
-  .submit:hover {
-    background-color: #EF8378;
-    border: 3px #fff solid;
+.pkbtn:hover {
     color: #fff;
+    background-color: #EF8378;
+    border: #EF8378 3px solid;
+}
+.pkbtn:active {
+    background-color: #EF8378;
+}
+
+
+.pkbtn.btn-primary {
+    --bs-btn-active-bg: #EF8378;
+    --bs-btn-active-border-color: #EF8378;
+}
+
+.submitbtn {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  form{
+    margin-bottom: 0px;
   }
   
-

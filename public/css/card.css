@@ -178,6 +178,26 @@ a.greenbtn:active {
     background-color: #a8cd69;
 }
 
+a.oybtn {
+    float: right;
+    position: row;
+    background-color: white;
+    color: #fdab2b;
+    border: #fdab2b 3px solid;
+    bottom: 10px;
+    font-family: Helvetica;
+    font-size: 18px;
+}
+
+a.oybtn:hover {
+    color: #fff;
+    background-color: #fdab2b;
+    border: #fdab2b 3px solid;
+}
+
+a.oybtn:active {
+    background-color: #fdab2b;
+}
 .center {
     text-align: center;
 }
@@ -202,34 +222,15 @@ a.greenbtn:active {
     --bs-btn-active-border-color: #e95318;
 }
 
+.oybtn.btn-primary {
+    --bs-btn-active-bg: #fdab2b;
+    --bs-btn-active-border-color: #fdab2b;
+}
+
 .buy {
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-a.oybtn {
-    float: right;
-    position: row;
-    background-color: white;
-    color: #fdab2b;
-    border: #fdab2b 3px solid;
-    bottom: 10px;
-    font-family: Helvetica;
-    font-size: 18px;
-}
-
-a.oybtn:hover {
-    color: #fff;
-    background-color: #fdab2b;
-    border: #fdab2b 3px solid;
-}
-
-a.oybtn:active {
-    background-color: #fdab2b;
-}
-
-.oybtn:not(.btn):active {
-    background-color: #fdab2b !important;
-    border: #fdab2b 3px solid;
-}
