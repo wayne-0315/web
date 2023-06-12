@@ -11,11 +11,14 @@ body {
         left: 50%;
         transform: translate(-50%, -50%);
     }
-    #else
-    {
+    /* #containtOut{
         position: absolute;
-        padding: 200px;
-    }
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1500px;
+        height: 800px;
+    } */
     #containt
     {
         position: absolute;
@@ -27,7 +30,6 @@ body {
         /* overflow: hidden; */
         /* background-color: rgb(238, 225, 255); */
     }
-
     .page {
         position: absolute;
         left: 0;
@@ -38,19 +40,24 @@ body {
     }
 
     .gotoUp {
-        position: fixed;
-        left: 0.5%;
-        top: 50%;
-        width: 10%;
+        position: absolute;
+        left: -20%;
+        top: 45%;
+        width: 15%;
         cursor: pointer;
     }
-
     .gotodown {
         position: absolute;
-        right:0.5%;
-        top: 50%;
-        width: 10%;
+        right:-20%;
+        top:  45%;
+        width: 15%;
         cursor: pointer;
+    }
+    .gotoUp:hover{
+        filter: brightness(70%);
+    }
+    .gotodown:hover{
+        filter: brightness(70%);
     }
 
     .backgroundtop {
@@ -60,6 +67,8 @@ body {
         margin: auto; 
         width: 100%;
         max-width: 450px;
+        box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
+
     }
 
     .background {
@@ -72,8 +81,7 @@ body {
 
         max-width: 900px;
         max-height: 650px;
-
-
+        box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
     }
     .background,
     .other-image {
@@ -81,7 +89,17 @@ body {
         top: 0;
         left: 0;
     }
+    .bookmu
+    {
+        display: grid;
+        place-items: center;
+        margin: auto; 
+        width:100%; 
+        top:-4%;
+         height: 118%;
+        position: absolute;
 
+    }
     .PagenumL{
         position: absolute;
         left:3%;
@@ -104,6 +122,17 @@ body {
         border-radius: 30px;;
     }
 
+    .parent:hover .rectangle,
+    .parent:hover .Text {
+        cursor: pointer;
+        transform: scale(1.5); /* 设置放大倍数，这里为1.2 */
+        transition: transform 0.3s ease; /* 设置过渡动画效果，这里为0.3秒的ease过渡 */
+    }
+    .Text:hover{
+        cursor: pointer;
+        transform: scale(1.5); /* 设置放大倍数，这里为1.2 */
+        transition: transform 0.3s ease; /* 设置过渡动画效果，这里为0.3秒的ease过渡 */
+    }
     .glow-circle {
         width: 39px;
         height: 39px;
@@ -125,18 +154,16 @@ body {
         animation: glow-animation 1.5s infinite;
     }
 
-    .playgamePic{
-        overflow:hidden;
-        position: absolute;
-        top:15%;left:30%;
-        width:15%;
+    .playgamePic:hover{
+        transform: scale(1.2);
+        filter: brightness(90%);
+        transition: transform 0.3s ease; /* 设置过渡动画效果，这里为0.3秒的ease过渡 */
+
     }
-    .playgamePic img{
-        transform:scale(1,1);
-        transition: all 1s ease-out;
-    }
-    .playgamePic img:hover{
-        transform:scale(1.2,1.2);
+    .speaker:hover{
+        transform: scale(1.2);
+        filter: brightness(90%);
+        transition: transform 0.3s ease; /* 设置过渡动画效果，这里为0.3秒的ease过渡 */
     }
  
 @keyframes glow-animation {
